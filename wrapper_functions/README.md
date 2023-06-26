@@ -129,8 +129,13 @@ kit.get_clusters(k=2)
 - Section Detection
 - UMLS Concept Extraction
 
-### New Release Models for Machine Translation - May, 2023
+### New Release Models - June, 2023
+
+#### Machine Translation: 
 We fine-tuned on the [UFAL data](https://ufal.mff.cuni.cz/ufal_medical_corpus) to support more languages, feel free to download the Transformer models [MT5-based](https://huggingface.co/qcz), more models Users can also be found [SciFive-based](https://huggingface.co/irenelizihui/scifive_ufal_MT_en_es/). 
+
+
+
 
 ## Troubleshooting 🔧
 
