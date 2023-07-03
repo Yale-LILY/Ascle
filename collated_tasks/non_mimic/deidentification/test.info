@@ -1,0 +1,14 @@
+Patient 1	Note 1
+0	0	# M
+11	15	# KEEN.	Last Name (ambig)
+17	19	# MY 
+27	39	123-456-7890.	Telephone/Fax (2)
+61	71	01/01/2020.	Month/Day/Year
+94	110	ABCDEF@HELLO.COM.	E-mail address
+127	130	# OLD.	Last Name (ambig)
+143	152	NEW HAVEN,	Location (un)
+154	165	# CONNECTICUT.
+170	174	# HOME 	Last Name (ambig)
+186	197	123 EAST ST,	Street Address
+207	216	NEW HAVEN,	Location (un)
+218	225	CT06511.	State/Zipcode
