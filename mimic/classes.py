@@ -1,4 +1,4 @@
-"""Class definitions used in ehrkit.py"""
+"""Class definitions used in mimiciii.py"""
 from datetime import date
 
 class Patient:

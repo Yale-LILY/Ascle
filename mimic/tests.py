@@ -4,23 +4,23 @@ import sys, os
 import re
 import nltk
 import json
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'allennlp')))
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'summarization', 'pubmed_summarization')))
-# print(sys.path)
-from ehrkit import ehrkit
-from getpass import getpass
 
-try: 
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'allennlp')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'summarization', 'pubmed_summarization')))
+# print(sys.path)
+# from ehrkit import ehrkit
+from getpass import getpass
+import mimiciii
+
+try:
     from config import USERNAME, PASSWORD
 except:
     print("Please put your username and password in config.py")
     USERNAME = input('DB_username?')
     PASSWORD = getpass('DB_password?')
 
-
-DOC_ID = 1354526 # Temporary!!!
-
+DOC_ID = 1354526  # Temporary!!!
 
 # Number of documents in NOTEEVENTS.
 NUM_DOCS = 2083180
@@ -36,10 +36,10 @@ def select_ehr(ehrdb, requires_long=False, recursing=False):
     if recursing:
         doc_id = ''
     else:
-        #doc_id = input("MIMIC Document ID [press Enter for random]: ")
-        
+        # doc_id = input("MIMIC Document ID [press Enter for random]: ")
+
         doc_id = ''
-    
+
     if doc_id == '':
         # Picks random document
         ehrdb.cur.execute("SELECT ROW_ID FROM mimic.NOTEEVENTS ORDER BY RAND() LIMIT 1")
@@ -64,7 +64,7 @@ def get_nb_dir(ending, SUMM_DIR):
     dir_nums = []
     for dir in os.listdir(SUMM_DIR):
         if os.path.isdir(os.path.join(SUMM_DIR, dir)) and dir.endswith('_exs_' + ending):
-            if os.path.exists(os.path.join(SUMM_DIR, dir, 'nb')):  
+            if os.path.exists(os.path.join(SUMM_DIR, dir, 'nb')):
                 try:
                     dir_nums.append(int(dir.split('_')[0]))
                 except:
@@ -75,17 +75,18 @@ def get_nb_dir(ending, SUMM_DIR):
     else:
         return None
 
+
 def show_summary(doc_id, text, summary, model_name):
-    #x = input('Show full EHR (DOC ID %s)? [DEFAULT=Yes]' % doc_id)
+    # x = input('Show full EHR (DOC ID %s)? [DEFAULT=Yes]' % doc_id)
     x = ''
     if x.lower() in ['y', 'yes', '']:
-        print('\n\n' + '-'*30 + 'Full EHR' + '-'*30)
+        print('\n\n' + '-' * 30 + 'Full EHR' + '-' * 30)
         print(text + '\n')
-        print('-'*80 + '\n\n')
+        print('-' * 80 + '\n\n')
 
-    print('-'*30 + 'Predicted Summary ' + model_name + '-'*30)
+    print('-' * 30 + 'Predicted Summary ' + model_name + '-' * 30)
     print(summary)
-    print('-'*80 + '\n\n')
+    print('-' * 80 + '\n\n')
 
 
 class tests(unittest.TestCase):
@@ -95,6 +96,8 @@ class tests(unittest.TestCase):
 
 
 ''' Runs tests 1.1-1.4 '''
+
+
 class t1(tests):
     def test1_1_count_patients(self):
         kit_count = self.ehrdb.count_patients()
@@ -107,7 +110,7 @@ class t1(tests):
         self.assertEqual(test_count, kit_count)
 
     # def test1_2_count_docs(self):
-    #     # Fails! count_docs returns 1573339, but mimic.NOTEEVENTS has 2083180 documents. 
+    #     # Fails! count_docs returns 1573339, but mimic.NOTEEVENTS has 2083180 documents.
     #     # TO DO: Fix whatever is wrong here
     #     kit_count = self.ehrdb.count_docs(['NOTEEVENTS'])
     #     print("Document count: ", kit_count)
@@ -121,7 +124,8 @@ class t1(tests):
     def test1_3_note_info(self):
         self.ehrdb.get_note_events()
         print('output format: SUBJECT_ID, ROW_ID, NoteEvent length')
-        lens = [(patient.id, note[0], len(note[1])) for patient in self.ehrdb.patients.values() for note in patient.note_events]
+        lens = [(patient.id, note[0], len(note[1])) for patient in self.ehrdb.patients.values() for note in
+                patient.note_events]
         print(lens)
 
         # placeholder, this output cannot be checked easily
@@ -162,7 +166,7 @@ class t2(tests):
 
         self.assertEqual(kit_ids, test_ids)
 
-    #@unittest.skipIf("t2.test2_3" not in sys.argv, "Test 2_3 must be run explicitly due to runtime.")
+    # @unittest.skipIf("t2.test2_3" not in sys.argv, "Test 2_3 must be run explicitly due to runtime.")
     def test2_3_doc_ids(self):
         kit_ids = self.ehrdb.list_all_document_ids()
 
@@ -186,9 +190,9 @@ class t2(tests):
 
         self.assertEqual(kit_ids, test_ids)
 
-    #@unittest.skipIf("t2.test2_5" not in sys.argv, "Test 2_5 must be run explicitly due to runtime.")
+    # @unittest.skipIf("t2.test2_5" not in sys.argv, "Test 2_5 must be run explicitly due to runtime.")
     def test2_5_docs_on_date(self):
-        ### Select random date from a date in the database. 
+        ### Select random date from a date in the database.
         ### Dates are shifted to future but preserve time, weekday, and seasonality.
         random_id = random.randint(1, NUM_DOCS + 1)
         self.ehrdb.cur.execute("select CHARTDATE from mimic.NOTEEVENTS where ROW_ID = %d" % random_id)
@@ -225,7 +229,7 @@ class t3(tests):
 
         self.assertEqual(kit_abbs, list(test_abbs))
 
-    #@unittest.skipIf("t3.test3_2" not in sys.argv, "Test 3_2 must be run explicitly due to runtime.")
+    # @unittest.skipIf("t3.test3_2" not in sys.argv, "Test 3_2 must be run explicitly due to runtime.")
     def test3_2_docs_with_query(self):
         query = "meningitis"
         print('Printing a list of all document ids including query like ', query)
@@ -233,14 +237,14 @@ class t3(tests):
         print(kit_ids[:30])  # Extremely long list of DOC_IDs
         print("...")
 
-        query = "%"+query+"%"
+        query = "%" + query + "%"
         self.ehrdb.cur.execute("select ROW_ID from mimic.NOTEEVENTS where TEXT like \'%s\'" % query)
         raw = self.ehrdb.cur.fetchall()
         test_ids = ehrkit.flatten(raw)
 
         self.assertEqual(kit_ids, test_ids)
 
-    #@unittest.skipIf("t3.test3_3" not in sys.argv, "Test 3_3 must be run explicitly due to runtime. Also, this is essentially a duplicate of task 3.2.")
+    # @unittest.skipIf("t3.test3_3" not in sys.argv, "Test 3_3 must be run explicitly due to runtime. Also, this is essentially a duplicate of task 3.2.")
     def test3_3_query_docs(self):
         ### Task 3.3 is the same as task 3.2 with a different query. ###
         query = "Service: SURGERY"
@@ -249,7 +253,7 @@ class t3(tests):
         print(kit_ids[:30])  # Extremely long list of DOC_IDs
         print("...")
 
-        query = "%"+query+"%"
+        query = "%" + query + "%"
         self.ehrdb.cur.execute("select ROW_ID from mimic.NOTEEVENTS where TEXT like \'%s\'" % query)
         raw = self.ehrdb.cur.fetchall()
         test_ids = ehrkit.flatten(raw)
@@ -270,7 +274,7 @@ class t3(tests):
 
         self.assertEqual(kit_doc, test_doc)
 
-    #@unittest.skipIf("t3.test3_7" not in sys.argv, "Test 3_7 must be run explicitly due to runtime.")
+    # @unittest.skipIf("t3.test3_7" not in sys.argv, "Test 3_7 must be run explicitly due to runtime.")
     def test3_7_medications(self):
         kit_meds = self.ehrdb.count_all_prescriptions()
 
@@ -325,7 +329,8 @@ class t5(tests):
 
 
 class t6(tests):
-    @unittest.skipIf("t6.test6_1_sentiment_classification" not in sys.argv, "Test 6_1 must be run explicitly due to verbosity.")
+    @unittest.skipIf("t6.test6_1_sentiment_classification" not in sys.argv,
+                     "Test 6_1 must be run explicitly due to verbosity.")
     def test6_1_sentiment_classification(self):
         import loader
 
@@ -366,20 +371,19 @@ class t6(tests):
         print_results = input("Prediction complete. Print results? (y/n): ")
         if print_results == "y":
             print("Document ID: ", doc_id, "  Results: ", pred['tags'])
-    
+
     @unittest.skipIf("t6.test6_3_tokenize" not in sys.argv, "Test 6_3 must be run explicitly due to runtime.")
     def test6_3_tokenize(self):
         import torch
-        from transformers import BertTokenizer#, BertModel, BertForMaskedLM
+        from transformers import BertTokenizer  # , BertModel, BertForMaskedLM
 
         doc_id, text = select_ehr(self.ehrdb)
         tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
         bert_tokenized_text = tokenizer.tokenize(text)
-        print('\n' + '-'*20 + 'text' + '-'*20)
+        print('\n' + '-' * 20 + 'text' + '-' * 20)
         print(text)
-        print('\n' + '-'*20 + 'Tokenized text from Huggingface BERT Tokenizer' + '-'*20)    
+        print('\n' + '-' * 20 + 'Tokenized text from Huggingface BERT Tokenizer' + '-' * 20)
         print(bert_tokenized_text)
-
 
         # library function
         ehr_bert_tokenized_text = self.ehrdb.get_bert_tokenize(doc_id)
@@ -388,16 +392,16 @@ class t6(tests):
 
 class t7(tests):
     # Summarization algorithms
-    #@unittest.skipIf("t7.test7_1_naive_bayes" not in sys.argv, "Test 7_1 must be run explicitly due to verbosity.")
+    # @unittest.skipIf("t7.test7_1_naive_bayes" not in sys.argv, "Test 7_1 must be run explicitly due to verbosity.")
     def test7_1_naive_bayes(self):
         from pubmed_naive_bayes import classify_nb
         from get_pubmed_nb_data import build_vecs
         from sklearn.naive_bayes import GaussianNB
 
         doc_id, text = select_ehr(self.ehrdb)
-        #body_type = input('Use Naive Bayes model trained from whole body sections or just their body introductions?\n\t'\
+        # body_type = input('Use Naive Bayes model trained from whole body sections or just their body introductions?\n\t'\
         #                '[w=whole body, j=just intro, DEFAULT=just intro]: ')
-        
+
         body_type = 'j'
 
         if body_type == 'w':
@@ -406,23 +410,26 @@ class t7(tests):
             ending = 'intro'
         else:
             sys.exit('Error: Must input \'w\' or \'j.\'')
-        SUMM_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'summarization', 'pubmed_summarization'))
+        SUMM_DIR = os.path.abspath(
+            os.path.join(os.path.dirname(__file__), '../..', 'summarization', 'pubmed_summarization'))
         best_dir_name = get_nb_dir(ending, SUMM_DIR)
         if not best_dir_name:
-            message = 'No Naive Bayes models of this type have been fit. '\
-                        'Would you like to do so now?\n\t[DEFAULT=Yes] '
-            #response = input(message)
-            
+            message = 'No Naive Bayes models of this type have been fit. ' \
+                      'Would you like to do so now?\n\t[DEFAULT=Yes] '
+            # response = input(message)
+
             response = 'y'
 
             if response.lower() in ['y', 'yes', '']:
-                command = 'python ' + os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'summarization', 'pubmed_summarization', 'pubmed_naive_bayes.py'))
+                command = 'python ' + os.path.abspath(
+                    os.path.join(os.path.dirname(__file__), '../..', 'summarization', 'pubmed_summarization',
+                                 'pubmed_naive_bayes.py'))
                 os.system(command)
                 best_dir_name = get_nb_dir(ending)
             if response.lower() not in ['y', 'yes', ''] or not best_dir_name:
                 sys.exit('Exiting.')
 
-        # Fits model to data        
+        # Fits model to data
         NB_DIR = os.path.join(SUMM_DIR, best_dir_name, 'nb')
         with open(os.path.join(NB_DIR, 'feature_vecs.json'), 'r') as f:
             data = json.load(f)
@@ -442,8 +449,8 @@ class t7(tests):
                 summary += sents[i]
 
         show_summary(doc_id, text, summary, 'Naive Bayes')
-        
-    #@unittest.skipIf("t7.test7_2_distilbart_summary" not in sys.argv, "Test 7_2 must be run explicitly due to runtime.")
+
+    # @unittest.skipIf("t7.test7_2_distilbart_summary" not in sys.argv, "Test 7_2 must be run explicitly due to runtime.")
     def test7_2_distilbart_summary(self):
         # Distilbart for summarization. Trained on CNN/ Daily Mail (~4x longer summaries than XSum)
         doc_id, text = select_ehr(self.ehrdb, requires_long=True)
@@ -454,7 +461,7 @@ class t7(tests):
         print('Number of Words in Full EHR: %d' % len(text.split()))
         print('Number of Words in %s Summary: %d' % (model_name, len(summary.split())))
 
-    #@unittest.skipIf("t7.test7_3_t5_summary" not in sys.argv, "Test 7_3 must be run explicitly due to runtime.")
+    # @unittest.skipIf("t7.test7_3_t5_summary" not in sys.argv, "Test 7_3 must be run explicitly due to runtime.")
     def test7_3_t5_summary(self):
         # T5 for summarization. Trained on CNN/ Daily Mail
         doc_id, text = select_ehr(self.ehrdb, requires_long=True)
@@ -465,8 +472,10 @@ class t7(tests):
         print('Number of Words in Full EHR: %d' % len(text.split()))
         print('Number of Words in %s Summary: %d' % (model_name, len(summary.split())))
 
+
 def testing():
     unittest.main()
+
 
 if __name__ == '__main__':
     unittest.main()

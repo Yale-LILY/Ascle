@@ -1,8 +1,8 @@
 from datetime import date
 import pymysql
 #from sshtunnel import SSHTunnelForwarder
-from ehrkit.classes import Patient, Disease, Diagnosis, Prescription, Procedure
-from ehrkit.solr_lib import *
+from classes import Patient, Disease, Diagnosis, Prescription, Procedure
+from solr_lib import *
 from datetime import datetime
 from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.corpus import stopwords
@@ -19,8 +19,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 dir_path = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 sys.path.append(dir_path)
-from scripts.train_word2vec import train_word2vec
-from scripts.abb_extraction import output_abb
+# from scripts.train_word2vec import train_word2vec
+# from scripts.abb_extraction import output_abb
 
 
 # TODO: adding external library
@@ -73,12 +73,15 @@ class ehr_db:
 
             data["dod"] = p[3]
 
-            if data["dod"] != None and isinstance(data["dod"], str):
-                data["dod"] = datetime.strptime(data["dod"][0:10], "%Y-%m-%d")
+            # if data["dod"] != None and isinstance(data["dod"], str):
+            #     import pdb;pdb.set_trace()
+            #     data["dod"] = datetime.strptime(data["dod"][0:10], "%Y-%m-%d")
+
 
             data["alive"] = (data["dod"] == None)
 
             self.patients[data["id"]] = Patient(data)
+
 
     def count_patients(self):
         '''Counts and returns the number of patients as an int in the database.'''
@@ -521,8 +524,8 @@ class ehr_db:
         else:
             path = model_name
 
-        tokenizer_path = os.path.join(os.path.dirname(__file__), '..', 'huggingface', path, 'tokenizer')
-        model_path = os.path.join(os.path.dirname(__file__), '..', 'huggingface', path, 'model')
+        tokenizer_path = os.path.join(os.path.dirname(__file__), '../..', 'huggingface', path, 'tokenizer')
+        model_path = os.path.join(os.path.dirname(__file__), '../..', 'huggingface', path, 'model')
         tokenizer = AutoTokenizer.from_pretrained('t5-small', cache_dir=tokenizer_path)
         model = AutoModelWithLMHead.from_pretrained(model_name, cache_dir=model_path)
 
@@ -584,7 +587,7 @@ def start_session(db_user, db_pass):
     """
 
 
-    cnx = pymysql.connect(host='0.0.0.0',
+    cnx = pymysql.connect(host='localhost',
                              user=db_user,
                              password=db_pass,port = 3306)
                              #port=8080)
@@ -630,8 +633,8 @@ def numbered_print(lst):
         print(num, '\n', elt)
 
 
-def init_embedding_model():
-    train_word2vec()
+# def init_embedding_model():
+#     train_word2vec()
 
 def get_abbs_sent_ids(text):
     ''' Returns a list of the abbreviations in a document along with the sentence ID they appear in
