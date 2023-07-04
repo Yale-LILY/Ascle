@@ -1,5 +1,5 @@
 from scispacy_functions import get_abbreviations, get_hyponyms, get_linked_entities, get_named_entities
-from transformer_functions import get_translation, get_supported_translation_languages, get_single_summary, get_multi_summary_joint
+from transformer_functions import get_translation, get_supported_translation_languages, get_single_summary, get_multi_summary_joint, get_med_question, get_span_answer,get_question,get_choice,get_dialogpt
 from utils import get_sents_stanza, get_multiple_sents_stanza, get_sents_pyrush, get_sents_scispacy
 from multi_doc_functions import get_clusters, get_similar_documents
 from transformers_translationMT5 import get_mT5_translation
@@ -165,3 +165,22 @@ class EHRKit:
         translation = get_mT5_translation(self.main_record, target_language)
         return translation
 
+    def get_med_question(self, model_name="AnonymousSub/SciFive_MedQuAD_question_generation"):
+        med_question = get_med_question(self.main_record,model_name)
+        return med_question
+
+    def get_span_answer(self,context, model_name="sultan/BioM-ELECTRA-Large-SQuAD2"):
+        answer = get_span_answer(self.main_record,context, model_name)
+        return answer
+    def get_question(self, model_name="AnonymousSub/SciFive_MedQuAD_question_generation"):
+        question = get_question(self.main_record,model_name)
+        return question
+
+    def get_choice(self,candicates, model="russab0/distilbert-qa"):
+        # candicates is a list of string, default length is 4
+        choice = get_choice(self.main_record,candicates,model)
+        return choice
+
+    def get_dialogpt(self):
+        # interactive function
+        get_dialogpt()

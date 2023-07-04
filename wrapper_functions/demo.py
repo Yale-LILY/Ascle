@@ -19,6 +19,11 @@ if __name__ == '__main__':
     kit.update_and_delete_main_record(record)
     print(kit.get_abbreviations())
 
+
+    # test code start
+
+    # test code end
+
     print('\n\n')
     print('Hyponyms')
 
@@ -66,6 +71,7 @@ if __name__ == '__main__':
              " interact closely with other cell types, broadly classified as glia (these may actually outnumber neurons, " \
              "although it’s not really known)."
 
+
     kit.update_and_delete_main_record(record)
     print(kit.get_translation('French'))
 
@@ -86,8 +92,8 @@ if __name__ == '__main__':
     print('Using stanza')
     print(kit.get_sentences('stanza'))
 
-    print('Using PyRush')
-    print(kit.get_sentences('pyrush'))
+    # print('Using PyRush')
+    # print(kit.get_sentences('pyrush'))
 
     print('Using SciSpacy')
     print(kit.get_sentences('scispacy'))
@@ -171,6 +177,46 @@ if __name__ == '__main__':
 
     kit.update_and_delete_main_record(record)
     kit.get_dependency()
+
+    print("========== Start of Pretrained Model Functions ==========")
+    print('')
+    print('\n\n')
+    print('Question Generation')
+
+    record = """
+             Myeloid derived suppressor cells (MDSC) are immature
+             myeloid cells with immunosuppressive activity.
+             They accumulate in tumor-bearing mice and humans
+             with different types of cancer, including hepatocellular
+             carcinoma (HCC).
+             """
+    kit.update_and_delete_main_record(record)
+    print(kit.get_question())
+
+
+    print('\n\n')
+    print("Translations")
+    print(kit.get_translation_mt5('French'))
+
+    print('\n\n')
+    print("Question and Answering: choose from 4 candidates")
+    question = "Which of the following is a risk factor for developing hyperlipidaemia?"
+    choices = ["age", "family history", "obesity", "all of the above"]
+    kit.update_and_delete_main_record(question)
+    print("The answer is..", kit.get_choice(choices))
+
+    print('\n\n')
+    print("Question and Answering: ")
+    question = 'Question: What are the common symptoms of the flu?'
+    content = 'Content: Influenza, commonly known as the flu, is a viral respiratory illness. It is characterized by symptoms such as fever, cough, sore throat, runny or stuffy nose, body aches, fatigue, and headaches.'
+    kit.update_and_delete_main_record(question)
+    print(kit.get_span_answer(content))
+
+    print('\n\n')
+    print("Interactive chat, by default, this will last 5 rounds: ")
+    kit.get_dialogpt()
+
+
 
 
 
