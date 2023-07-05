@@ -122,7 +122,7 @@ A Python Natural Language Processing Toolkit for Electronic Health Record Texts
 `get_dialogpt()`: an interactive function for simple chat functions, relying on `microsoft/DialoGPT-medium` mode. 
 
 
-`get_choice(question, choices, model_checkpoint)`: TODO for yang rui [please]
+`get_choice(question, choices, model_checkpoint)`: TODO for yang rui
 **Parameters**:
 * `model_name`: choices:`...`, please list all the possible models, if we have our own finetuned ones, also list them, thanks
 
