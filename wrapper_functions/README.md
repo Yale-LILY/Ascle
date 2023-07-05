@@ -2,6 +2,9 @@
 # EHRKit-WF: we provide many off-shelf methods for processing medical text. 
 [![Python 3.6.13](https://img.shields.io/badge/python-3.6.13-green.svg)](https://www.python.org/downloads/release/python-360/)
 [![Python 3.8.8](https://img.shields.io/badge/python-3.8.8-green.svg)](https://www.python.org/downloads/release/python-380/)
+[![Python 3.8.16](https://img.shields.io/badge/python-3.8.16-green.svg)](https://www.python.org/downloads/release/python-380/)
+
+
 ## Overview
 We integrate various text-processing tools, with a focus on the medical domain, into one single, user-friendly toolkit.
 
@@ -33,6 +36,12 @@ pip install summa==1.2.0
 pip install negspacy==1.0.2
 pip install medspacy==0.2.0.0
 wget https://github.com/jianlins/PyRuSH/raw/master/conf/rush_rules.tsv -P conf
+```
+
+Or using `requirements.txt`:
+
+```bash
+pip install -r requirements.txt
 ```
 
 ## Quick Start
@@ -120,7 +129,7 @@ kit.get_clusters(k=2)
 - Hyponym Detection
 - Entity Linking
 - Named Entity Recognition
-- Translation
+- Machine Translation
 - Sentencizer
 - Document clustering
 - Similar Document Retrieval
@@ -128,12 +137,15 @@ kit.get_clusters(k=2)
 - Negation Detection
 - Section Detection
 - UMLS Concept Extraction
+- Understandable Translation
+- Question Answering
+- Question Generation
+- Interactive Chatting
 
 ### New Release Models - June, 2023
 
 #### Machine Translation: 
 We fine-tuned on the [UFAL data](https://ufal.mff.cuni.cz/ufal_medical_corpus) to support more languages, feel free to download the Transformer models [MT5-based](https://huggingface.co/qcz), more models Users can also be found [SciFive-based](https://huggingface.co/irenelizihui/scifive_ufal_MT_en_es/). 
-
 
 
 

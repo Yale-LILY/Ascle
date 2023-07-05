@@ -102,7 +102,7 @@ print(kit_ids[:30])  # Extremely long list of DOC_IDs
 print("...")
 ```
 
-A quick lightweight test is provided in `0_test.py`, by running `python 0_test.py`. 
+A quick lightweight test is provided in `demo.py`, by running `python demo.py`. 
 We also provide how to use more functions in `tests.py`. Please run `python tests.py` for more details, and this may take some time. 
 
 ## mimiciii.py functions

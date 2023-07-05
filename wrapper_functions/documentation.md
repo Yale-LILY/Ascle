@@ -72,6 +72,65 @@ A Python Natural Language Processing Toolkit for Electronic Health Record Texts
 * `texts`: input text in a list of string  
 * returns a list of lists of sentences, each list is made up of sentences from the same document
 
+
+`get_single_summary(text,model_name,min_length,max_length)`: single document text summarization
+
+**Parameters**:
+* `text`: input string text
+* `model_name`: model_name: `bart-large-cnn`', '`t5-small`', '`t5-base`', '`t5-large`', '`t5-3b`', '`t5-11b`
+* `min_length`: min length in summary
+* `max_length`: max length in summary
+* returns the summary string
+
+`get_multi_summary_joint(text, model_name, min_length, max_length)`: text summarization, given multiple documents (Join all the input documents as a long document, then do single document summarization) 
+
+**Parameters**:
+* `text`: input sequence: a list of string
+* `model_name`: model_name: `bart-large-cnn`', '`t5-small`', '`t5-base`', '`t5-large`', '`t5-3b`', '`t5-11b`
+* `min_length`: min length in summary
+* `max_length`: max length in summary
+* returns the summary string
+
+
+`get_span_answer(question, context, model_name)`: question answering, given question and context, return the answer in a string format
+
+**Parameters**:
+* `question`: the question, input sequence as a string
+* `context`: related context, input sequence as a string
+* `model_name`: choices:`sultan/BioM-ELECTRA-Large-SQuAD2`, `deepset/roberta-base-squad2`, `AnonymousSub/SciFive_MedQuAD_question_generation`
+* returns a string as the answer
+
+
+`get_question(context, model_name)`: generate a question, given the input context
+
+**Parameters**:
+* `context`: related context, input sequence as a string
+* `model_name`: choices:`AnonymousSub/SciFive_MedQuAD_question_generation`, others are possible
+* returns a string as the generated question
+
+`get_med_question(context, model_name)`: similar with `get_question(context, model_name)`.
+
+`get_layman_text(text, model_name, min_length, max_length)`: translate the clinical text into layman understandable text
+**Parameters**:
+* `context`: input text string
+* `model_name`: we provide our finetuned models: `ireneli1024/bigbird-pegasus-large-pubmed-plos-finetuned`,`ireneli1024/biobart-v2-base-plos-finetuned`,`ireneli1024/biobart-v2-base-elife-finetuned`,`ireneli1024/bart-large-PLOS-finetuned`,`ireneli1024/bart-large-elife-finetuned`,`ireneli1024/bigbird-pegasus-large-pubmed-elife-finetuned`
+* `min_length`: int, min length of the generated text
+* `max_length`: int, max length of the generated text
+* returns a string as the generated translated text
+
+
+`get_dialogpt()`: an interactive function for simple chat functions, relying on `microsoft/DialoGPT-medium` mode. 
+
+
+`get_choice(question, choices, model_checkpoint)`: TODO for yang rui [please]
+**Parameters**:
+* `model_name`: choices:`...`, please list all the possible models, if we have our own finetuned ones, also list them, thanks
+
+`get_mT5_translation(text,target_language)`: TODO for qingcheng
+**Parameters**:
+* `model_name`: choices:`...`, please list all the possible models, if we have our own finetuned ones, also list them, thanks
+
+
 ### ✨stanza_functions.py
 `get_denpendencies(text)`: dependency parsing result for the input `text` in string, this is a wrapper of the stanza library.
 
@@ -123,4 +182,6 @@ A Python Natural Language Processing Toolkit for Electronic Health Record Texts
 **Parameters**:
 * `text`: input string text
 * returns a list of tuples, (entity_text, label, similarity, semtypes)
+
+
 

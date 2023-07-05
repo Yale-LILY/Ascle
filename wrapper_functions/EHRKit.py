@@ -1,5 +1,5 @@
 from scispacy_functions import get_abbreviations, get_hyponyms, get_linked_entities, get_named_entities
-from transformer_functions import get_translation, get_supported_translation_languages, get_single_summary, get_multi_summary_joint, get_med_question, get_span_answer,get_question,get_choice,get_dialogpt
+from transformer_functions import get_translation, get_supported_translation_languages, get_single_summary, get_multi_summary_joint, get_med_question, get_span_answer,get_question,get_choice,get_layman_text,get_dialogpt
 from utils import get_sents_stanza, get_multiple_sents_stanza, get_sents_pyrush, get_sents_scispacy
 from multi_doc_functions import get_clusters, get_similar_documents
 from transformers_translationMT5 import get_mT5_translation
@@ -176,10 +176,14 @@ class EHRKit:
         question = get_question(self.main_record,model_name)
         return question
 
-    def get_choice(self,candicates, model="russab0/distilbert-qa"):
+    def get_choice(self,candicates, model_name="russab0/distilbert-qa"):
         # candicates is a list of string, default length is 4
-        choice = get_choice(self.main_record,candicates,model)
+        choice = get_choice(self.main_record,candicates,model_name)
         return choice
+
+    def get_layman_text(self, model_name="ireneli1024/bart-large-elife-finetuned",min_length=50, max_length=200):
+        lay_summary = get_layman_text(self.main_record,model_name, min_length,max_length)
+        return lay_summary
 
     def get_dialogpt(self):
         # interactive function

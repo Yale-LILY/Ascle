@@ -20,10 +20,6 @@ if __name__ == '__main__':
     print(kit.get_abbreviations())
 
 
-    # test code start
-
-    # test code end
-
     print('\n\n')
     print('Hyponyms')
 
@@ -211,6 +207,14 @@ if __name__ == '__main__':
     content = 'Content: Influenza, commonly known as the flu, is a viral respiratory illness. It is characterized by symptoms such as fever, cough, sore throat, runny or stuffy nose, body aches, fatigue, and headaches.'
     kit.update_and_delete_main_record(question)
     print(kit.get_span_answer(content))
+
+    print('\n\n')
+    print("Translate to Layman language: ")
+    content = 'The patient presents with symptoms of acute bronchitis, including cough, chest congestion, and mild fever. Auscultation reveals coarse breath sounds and occasional wheezing. Based on the clinical examination, a diagnosis of acute bronchitis is made, and the patient is prescribed a short course of bronchodilators and advised to rest and stay hydrated.'
+    layman_model = "ireneli1024/bart-large-elife-finetuned"
+    kit.update_and_delete_main_record(content)
+    print(kit.get_layman_text(layman_model, min_length=20, max_length=70))
+
 
     print('\n\n')
     print("Interactive chat, by default, this will last 5 rounds: ")

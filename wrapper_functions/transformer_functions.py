@@ -121,43 +121,85 @@ def get_question(context, model_name="AnonymousSub/SciFive_MedQuAD_question_gene
     
     return question
 
-def get_choice(question, candicates, model="russab0/distilbert-qa"):
-    # multiple-choice-qa there is no fine-tuned version on headQA!, reference: https://huggingface.co/persiannlp/mbert-base-parsinlu-multiple-choice
-    # we return the answer directly
+# def get_choice(question, candicates, model="russab0/distilbert-qa"):
+#     # multiple-choice-qa there is no fine-tuned version on headQA!, reference: https://huggingface.co/persiannlp/mbert-base-parsinlu-multiple-choice
+#     # we return the answer directly
+#
+#     # from typing import List
+#     # import torch
+#     #
+#
+#     # model_name = "persiannlp/mbert-base-parsinlu-multiple-choice"
+#     model_name = model
+#     tokenizer = AutoTokenizer.from_pretrained(model_name)
+#     config = AutoConfig.from_pretrained(model_name)
+#     model = AutoModelForMultipleChoice.from_pretrained(model_name, config=config)
+#
+#     assert len(candicates) == 4, "you need four candidates"
+#     choices_inputs = []
+#     for c in candicates:
+#         text_a = ""  # empty context
+#         text_b = question + " " + c
+#         inputs = tokenizer(
+#             text_a,
+#             text_b,
+#             add_special_tokens=True,
+#             max_length=128,
+#             padding="max_length",
+#             truncation=True,
+#             return_overflowing_tokens=True,
+#         )
+#         choices_inputs.append(inputs)
+#
+#     input_ids = torch.LongTensor([x["input_ids"] for x in choices_inputs])
+#     output = model(input_ids=input_ids)
+#
+#     print (question+' choose from:')
+#     print (candicates)
+#
+#     return candicates[torch.argmax(output['logits'])]
 
-    # from typing import List
-    # import torch
-    # 
+def get_choice(question, choices, model_checkpoint="microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext"):
 
-    # model_name = "persiannlp/mbert-base-parsinlu-multiple-choice"
-    model_name = model
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    config = AutoConfig.from_pretrained(model_name)
-    model = AutoModelForMultipleChoice.from_pretrained(model_name, config=config)
+    '''
+    param question: input a question, the type of question should be a string
+    param choices: input a list of all choices, the type of each choice should be a string
+    param model_checkpoint: choose models you want to use, the default model is PubMedBERT
+    return: choice
+    ---------------------------------------------------------------------------------------
+    example:
+    question = "The excitatory postsynaptic potentials:"
+    choices = ["They are all or nothing." ,
+               "They are hyperpolarizing.",
+               "They can be added.",
+               "They spread long distances.",
+               "They present a refractory period."]
+    answer = get_choice(question, choices)
+    print(answer)
+    "They can be added."
+    '''
 
-    assert len(candicates) == 4, "you need four candidates"
-    choices_inputs = []
-    for c in candicates:
-        text_a = ""  # empty context
-        text_b = question + " " + c
+    tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)
+    config = AutoConfig.from_pretrained(model_checkpoint)
+    model = AutoModelForMultipleChoice.from_pretrained(model_checkpoint, config=config)
+
+    choice_inputs = []
+    for choice in choices:
+        text = question + " " + choice
         inputs = tokenizer(
-            text_a,
-            text_b,
+            text,
             add_special_tokens=True,
             max_length=128,
             padding="max_length",
             truncation=True,
             return_overflowing_tokens=True,
         )
-        choices_inputs.append(inputs)
+        choice_inputs.append(inputs)
 
-    input_ids = torch.LongTensor([x["input_ids"] for x in choices_inputs])
-    output = model(input_ids=input_ids)
-   
-    print (question+' choose from:')
-    print (candicates)
-    
-    return candicates[torch.argmax(output['logits'])]
+        input_ids = torch.LongTensor([i["input_ids"] for i in choice_inputs])
+        output = model(input_ids=input_ids)
+
+    return choices[torch.argmax(output["logits"])]
     
 def get_med_question(context, model_name="AnonymousSub/SciFive_MedQuAD_question_generation"):
     # generate a question given the input content
@@ -165,7 +207,29 @@ def get_med_question(context, model_name="AnonymousSub/SciFive_MedQuAD_question_
     question = bot(context)[0]
     question = question['generated_text']
     return question
-    
+
+def get_layman_text(text, model_name="ireneli1024/bart-large-elife-finetuned",min_length=50, max_length=200):
+    '''
+    https://huggingface.co/transformers/v3.0.2/_modules/transformers/pipelines.html#SummarizationPipeline
+    :param text: input sequence, a string or a list of string
+    :param model_name: model_name: `bart-large-cnn`', '`t5-small`', '`t5-base`', '`t5-large`', '`t5-3b`', '`t5-11b`
+    :param min_length: min length in summary
+    :param max_length: max length in summary
+    :return: summary string
+    '''
+    # choices: '`bart-large-cnn`', '`t5-small`', '`t5-base`', '`t5-large`', '`t5-3b`', '`t5-11b`'
+
+    classifier = pipeline("summarization", model=model_name, tokenizer=model_name,min_length=min_length, max_length=max_length)
+    res = classifier(text)
+    final_summary = []
+
+    for summary in res:
+        final_summary.append(summary['summary_text'])
+
+    lay_summary = '\n\n'.join(final_summary)
+
+    return lay_summary
+
 def get_dialogpt():
     
 
