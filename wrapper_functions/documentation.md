@@ -122,9 +122,13 @@ A Python Natural Language Processing Toolkit for Electronic Health Record Texts
 `get_dialogpt()`: an interactive function for simple chat functions, relying on `microsoft/DialoGPT-medium` mode. 
 
 
-`get_choice(question, choices, model_checkpoint)`: TODO for yang rui
+`get_choice(question, choices, model_name)`: 
+
 **Parameters**:
-* `model_name`: choices:`...`, please list all the possible models, if we have our own finetuned ones, also list them, thanks
+* `model_name`: we provide our fintuned models: `RUI525/ClinicalBERT-HEADQA`, `RUI525/BioBERT-HEADQA`, `RUI525/PubMedBERT-HEADQA`, `RUI525/SapBERT-HEADQA`, `RUI525/GatorTron-HEADQA`, `RUI525/ClinicalBERT-MedMCQA`, `RUI525/BioBERT-MedMCQA`, `RUI525/PubMedBERT-MedMCQA`, `RUI525/SapBERT-MedMCQA`, `RUI525/GatorTron-MedMCQA`. And you can also use other models that are applicable to multiple-choice tasks.
+* `question`: string, input a question.
+* `choices`: a list of string, input all choices.
+* returns the correct choice
 
 `get_mT5_translation(text,target_language)`: TODO for qingcheng
 **Parameters**:
