@@ -112,7 +112,7 @@ A Python Natural Language Processing Toolkit for Electronic Health Record Texts
 
 `get_layman_text(text, model_name, min_length, max_length)`: translate the clinical text into layman understandable text
 **Parameters**:
-* `context`: input text string
+* `text`: input text string
 * `model_name`: we provide our finetuned models: `ireneli1024/bigbird-pegasus-large-pubmed-plos-finetuned`,`ireneli1024/biobart-v2-base-plos-finetuned`,`ireneli1024/biobart-v2-base-elife-finetuned`,`ireneli1024/bart-large-PLOS-finetuned`,`ireneli1024/bart-large-elife-finetuned`,`ireneli1024/bigbird-pegasus-large-pubmed-elife-finetuned`
 * `min_length`: int, min length of the generated text
 * `max_length`: int, max length of the generated text
