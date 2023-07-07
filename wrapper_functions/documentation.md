@@ -62,8 +62,15 @@ A Python Natural Language Processing Toolkit for Electronic Health Record Texts
 **Parameters**:
 * `text`: input text in string
 * `model_name`: bert model name in string
-* `target_language`: target language name from the supported langauge list
-* returns a string, which is the translated version of text]
+* `target_language`: target language name from the supported language list
+* returns a string, which is the translated version of the text]
+
+`get_mT5_translation(text, target_language)`: translate the input text into the target language using fine-tuned multilingual T5 models.
+
+**Parameters**:
+* `text`: input text in string (English)
+* `target_language`: target language name from the supported language list
+* returns a string, which is the translated version of the text]
 
 `get_bert_embeddings(pretrained_model, texts)`: encode the input text with pretrained bert model
 
