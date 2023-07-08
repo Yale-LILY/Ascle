@@ -1,4 +1,4 @@
-from scispacy_functions import get_abbreviations, get_hyponyms, get_linked_entities, get_named_entities
+from scispacy_functions import get_abbreviations, get_hyponyms, get_linked_entities, get_named_entities, get_pos_tagging
 from transformer_functions import get_translation, get_supported_translation_languages, get_single_summary, get_multi_summary_joint, get_med_question, get_span_answer,get_question,get_choice,get_layman_text,get_dialogpt
 from utils import get_sents_stanza, get_multiple_sents_stanza, get_sents_pyrush, get_sents_scispacy
 from multi_doc_functions import get_clusters, get_similar_documents
@@ -188,3 +188,6 @@ class EHRKit:
     def get_dialogpt(self):
         # interactive function
         get_dialogpt()
+        
+    def get_pos_tagging(self,model_name="en_core_sci_sm"):
+        return get_pos_tagging(model_name,self.main_record)

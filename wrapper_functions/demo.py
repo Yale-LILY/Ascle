@@ -28,6 +28,8 @@ if __name__ == '__main__':
     kit.update_and_delete_main_record(record)
     print(kit.get_hyponyms())
 
+
+
     print('\n\n')
     print('Linked entities')
 
@@ -52,6 +54,20 @@ if __name__ == '__main__':
 
     kit.update_and_delete_main_record(record)
     print(kit.get_named_entities())
+
+    print('\n\n')
+    print('POS Tagging')
+
+    record = """
+             Myeloid derived suppressor cells (MDSC) are immature
+             myeloid cells with immunosuppressive activity.
+             They accumulate in tumor-bearing mice and humans
+             with different types of cancer, including hepatocellular
+             carcinoma (HCC).
+             """
+
+    kit.update_and_delete_main_record(record)
+    print(kit.get_pos_tagging(model_name="en_core_sci_sm")) 
 
     print("========== End of SciSpacy Functions ==========")
     print('\n\n')

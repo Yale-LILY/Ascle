@@ -109,3 +109,22 @@ def get_negation_entities(model, text):
 
     return pairs
 
+def get_pos_tagging(model, text):
+    """
+    returns the pos tagging for the input text; 
+    returns a list of tuples
+    model: `en_core_sci_sm`, `en_core_sci_md`,`en_core_sci_scibert`,`en_core_sci_lg`,`en_ner_craft_md`,`en_ner_jnlpba_md`,`en_ner_bc5cdr_md`,`en_ner_bionlp13cg_md`
+    Check more: https://allenai.github.io/scispacy/
+    example: 
+    >>get_pos_tagging("en_core_sci_sm",'The patient presented with a persistent cough and shortness of breath.')
+    [(The, 'DET'), (patient, 'NOUN'), (presented, 'VERB'), (with, 'ADP'), (a, 'DET'), (persistent, 'ADJ'), (cough, 'NOUN'), (and, 'CCONJ'), (shortness, 'NOUN'), (of, 'ADP'), (breath, 'NOUN'), (., 'PUNCT')]
+    """
+    nlp = spacy.load(model)
+    
+    doc = nlp(text)
+    predicted = []
+    for token in doc:
+        predicted.append((token,token.pos_))
+    return predicted
+    
+    
