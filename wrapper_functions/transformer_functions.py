@@ -3,6 +3,8 @@ import torch
 import numpy as np
 from utils import get_sents_stanza, get_multiple_sents_stanza
 from transformers import pipeline
+from flair.data import Sentence
+from flair.models import SequenceTagger
 
 LANG_CODE = {'Malay_written_with_Latin': '>>zlm_Latn<<', 'Mauritian_Creole': '>>mfe<<', 'Haitian': '>>hat<<',
              'Papiamento': '>>pap<<', 'Asturian': '>>ast<<', 'Catalan': '>>cat<<', 'Indonesian': '>>ind<<',
@@ -217,8 +219,6 @@ def get_layman_text(text, model_name="ireneli1024/bart-large-elife-finetuned",mi
     :param max_length: max length in summary
     :return: summary string
     '''
-    # choices: '`bart-large-cnn`', '`t5-small`', '`t5-base`', '`t5-large`', '`t5-3b`', '`t5-11b`'
-
     classifier = pipeline("summarization", model=model_name, tokenizer=model_name,min_length=min_length, max_length=max_length)
     res = classifier(text)
     final_summary = []
@@ -249,4 +249,25 @@ def get_dialogpt():
 
         # pretty print last ouput tokens from bot
         print("DialoGPT: {}".format(tokenizer.decode(chat_history_ids[:, bot_input_ids.shape[-1]:][0], skip_special_tokens=True)))
+
+def get_pos_tagging_hf(text,model_name="flair/pos-english"):
+    '''
+    pos tagging using a huggingface model, you need to install flair to run it
+    :param text: input sequence, a string or a list of string
+    :param model_name: default "flair/pos-english"
+    :return: a list of token/pos tag with a score. 
+    '''
+    
+    tagger = SequenceTagger.load(model_name)
+    
+     # make example sentence
+    sentence = Sentence(text)
+
+    # predict NER tags
+    tagger.predict(sentence)
+    res = sentence.annotation_layers['pos']
+    predicted = []
+    for item in res:
+        predicted.append((item,item._value))
+    return res
 

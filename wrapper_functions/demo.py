@@ -1,4 +1,5 @@
 from EHRKit import EHRKit
+import pprint
 
 if __name__ == '__main__':
     print("Welcome to LILY-EHRKit. Here's a complete run-through of all EHRKit text processing functions.")
@@ -28,8 +29,7 @@ if __name__ == '__main__':
     kit.update_and_delete_main_record(record)
     print(kit.get_hyponyms())
 
-
-
+   
     print('\n\n')
     print('Linked entities')
 
@@ -192,6 +192,16 @@ if __name__ == '__main__':
 
     print("========== Start of Pretrained Model Functions ==========")
     print('')
+    
+    print('\n\n')
+    print('POS Tagging with Huggingface')
+    import pprint
+    record = 'The patient presented with a persistent cough and shortness of breath.'
+    kit.update_and_delete_main_record(record)
+    pprint.pprint(kit.get_pos_tagging_hf())
+
+    
+    
     print('\n\n')
     print('Question Generation')
 
