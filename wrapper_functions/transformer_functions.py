@@ -161,15 +161,17 @@ def get_question(context, model_name="AnonymousSub/SciFive_MedQuAD_question_gene
 #
 #     return candicates[torch.argmax(output['logits'])]
 
-def get_choice(question, choices, model_checkpoint="microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext"):
+def get_choice(text, question, choices, model_checkpoint="microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext"):
 
     '''
+    para text: input a content related to the question, the type should be a tring, if there is no text, input an empty string
     param question: input a question, the type of question should be a string
     param choices: input a list of all choices, the type of each choice should be a string
     param model_checkpoint: choose models you want to use, the default model is PubMedBERT
     return: choice
     ---------------------------------------------------------------------------------------
     example:
+    text = ""
     question = "The excitatory postsynaptic potentials:"
     choices = ["They are all or nothing." ,
                "They are hyperpolarizing.",
@@ -178,7 +180,7 @@ def get_choice(question, choices, model_checkpoint="microsoft/BiomedNLP-PubMedBE
                "They present a refractory period."]
     answer = get_choice(question, choices)
     print(answer)
-    "They can be added."
+    They can be added.
     '''
 
     tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)
@@ -187,9 +189,11 @@ def get_choice(question, choices, model_checkpoint="microsoft/BiomedNLP-PubMedBE
 
     choice_inputs = []
     for choice in choices:
-        text = question + " " + choice
+        text_a = text
+        text_b = question + " " + choice
         inputs = tokenizer(
-            text,
+            text_a,
+            text_b,
             add_special_tokens=True,
             max_length=128,
             padding="max_length",
@@ -200,7 +204,6 @@ def get_choice(question, choices, model_checkpoint="microsoft/BiomedNLP-PubMedBE
 
         input_ids = torch.LongTensor([i["input_ids"] for i in choice_inputs])
         output = model(input_ids=input_ids)
-
     return choices[torch.argmax(output["logits"])]
     
 def get_med_question(context, model_name="AnonymousSub/SciFive_MedQuAD_question_generation"):
