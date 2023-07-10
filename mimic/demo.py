@@ -4,8 +4,8 @@ import pymysql
 
 # Replace the placeholders with your MySQL database credentials
 host = 'localhost'
-USERNAME = 'root'
-PASSWORD = 'Ilove4xwz!'
+USERNAME = 'mimictest'
+PASSWORD = '00000000'
 database = 'mimiciiiv14'
 
 
