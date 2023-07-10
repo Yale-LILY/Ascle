@@ -29,7 +29,7 @@ Moreover, if users want to deal with general medical texts, we integrate third-p
 
 
 <p align="center">
-   <img src="ehrkit.pdf" alt="EHRKit"/>
+   <img src="ehrkit.jpg" alt="EHRKit"/>
 </p>
 
 ## Table of Contents
