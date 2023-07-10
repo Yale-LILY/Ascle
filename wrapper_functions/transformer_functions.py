@@ -161,14 +161,14 @@ def get_question(context, model_name="AnonymousSub/SciFive_MedQuAD_question_gene
 #
 #     return candicates[torch.argmax(output['logits'])]
 
-def get_choice(text, question, choices, model_checkpoint="microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext", num_labels):
+def get_choice(text, question, choices, num_labels, model_checkpoint="microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext"):
 
     '''
-    param text: input a content related to the question, the type should be a tring, if there is no text, input an empty string
-    param question: input a question, the type of question should be a string
-    param choices: input a list of all choices, the type of each choice should be a string
+    param text: input a content related to the question, the type should be tring, if there is no text, input an empty string
+    param question: input a question, the type of question should be string
+    param choices: input a list of all choices, the type of each choice should be string
     param model_checkpoint: choose models you want to use, the default model is PubMedBERT
-    param num_labels: input the number of input choices, the type should be an int
+    param num_labels: input the number of choices, the type should be int
     return: choice
     ---------------------------------------------------------------------------------------
     example:
@@ -179,14 +179,14 @@ def get_choice(text, question, choices, model_checkpoint="microsoft/BiomedNLP-Pu
                "They can be added.",
                "They spread long distances.",
                "They present a refractory period."]
-    answer = get_choice(text, question, choices)
+    num_labels=5
+    answer = get_choice(text, question, choices,num_labels)
     print(answer)
     They can be added.
     '''
 
     tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)
-    config = AutoConfig.from_pretrained(model_checkpoint)
-    model = AutoModelForMultipleChoice.from_pretrained(model_checkpoint, config=config, num_labels=num_labels)
+    model = AutoModelForMultipleChoice.from_pretrained(model_checkpoint, num_labels=num_labels)
 
     choice_inputs = []
     for choice in choices:
