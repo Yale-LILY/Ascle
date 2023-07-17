@@ -129,12 +129,14 @@ A Python Natural Language Processing Toolkit for Electronic Health Record Texts
 `get_dialogpt()`: an interactive function for simple chat functions, relying on `microsoft/DialoGPT-medium` mode. 
 
 
-`get_choice(question, choices, model_name)`: 
+`get_choice(text, question, choices, num_labels, model_name)`: 
 
 **Parameters**:
-* `model_name`: we provide our fintuned models: `RUI525/ClinicalBERT-HEADQA`, `RUI525/BioBERT-HEADQA`, `RUI525/PubMedBERT-HEADQA`, `RUI525/SapBERT-HEADQA`, `RUI525/GatorTron-HEADQA`, `RUI525/ClinicalBERT-MedMCQA`, `RUI525/BioBERT-MedMCQA`, `RUI525/PubMedBERT-MedMCQA`, `RUI525/SapBERT-MedMCQA`, `RUI525/GatorTron-MedMCQA`. And you can also use other models that are applicable to multiple-choice tasks.
+* `model_name`: we provide our fintuned models: `RUI525/ClinicalBERT-finetune-HEADQA`, `RUI525/BioBERT-finetune-HEADQA`, `RUI525/PubMedBERT-finetune-HEADQA`, `RUI525/SapBERT-finetune-HEADQA`, `RUI525/GatorTron-finetune-HEADQA`, `RUI525/ClinicalBERT-finetune-MedMCQA-wo-context`, `RUI525/BioBERT-finetune-MedMCQA-wo-context`, `RUI525/PubMedBERT-finetune-MedMCQA-wo-context`, `RUI525/SapBERT-finetune-MedMCQA-wo-context`, `RUI525/GatorTron-finetune-MedMCQA-wo-context`, `RUI525/ClinicalBERT-finetune-MedMCQA-w-context`, `RUI525/BioBERT-finetune-MedMCQA-w-context`, `RUI525/PubMedBERT-finetune-MedMCQA-w-context`, `RUI525/SapBERT-finetune-MedMCQA-w-context`, `RUI525/GatorTron-finetune-MedMCQA-w-context`. And you can also use other models that are applicable to multiple-choice tasks.
+* `text`: string, input content related to the question.
 * `question`: string, input a question.
 * `choices`: a list of string, input all choices.
+* `num_labels`: int, input the number of choices.
 * returns the correct choice
 
 `get_mT5_translation(text,target_language)`: TODO for qingcheng
