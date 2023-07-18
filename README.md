@@ -11,7 +11,7 @@
 
 This library aims at processing medical texts in electronic health records. We provide specific functions to access the [MIMIC-III](https://physionet.org/content/mimiciii-demo/) record efficiently; the method includes searching by record ID, searching similar records, searching with an input query. We also support functions for some NLP tasks, including abbreviation disambiguation, extractive and abstractive summarization. For more specific evaluaiton, please check this [pre-print](https://arxiv.org/abs/2204.06604).
 
-Moreover, if users want to deal with general medical texts, we integrate third-party libraries, including [hugginface](https://huggingface.co/), [scispacy](https://allenai.github.io/scispacy/), [allennlp](https://github.com/allenai/allennlp), [stanza](https://stanfordnlp.github.io/stanza/), and so on. Please checkout the special verison of this library, [EHRKit-WF](https://github.com/Yale-LILY/EHRKit/tree/master/wrapper_functions).
+Moreover, if users want to deal with general medical texts, we integrate third-party libraries, including [hugginface](https://huggingface.co/), [scispacy](https://allenai.github.io/scispacy/), [allennlp](https://github.com/allenai/allennlp), [stanza](https://stanfordnlp.github.io/stanza/), and so on. Please check out the main module [EHRKit](https://github.com/Yale-LILY/EHRKit/tree/master/wrapper_functions).
 
 
 ### File Organization
