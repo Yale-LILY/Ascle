@@ -18,7 +18,7 @@ Moreover, if users want to deal with general medical texts, we integrate third-p
 
 - EHRKit
   - mimiciii: main mimic-iii support
-  - wrapper_functions: main off-shelf function support
+  - ehrkit: main general function support
   - independent_tasks: individual tasks and functions with tutorials
     - collated tasks
     - QueryExtraction
@@ -48,8 +48,8 @@ Moreover, if users want to deal with general medical texts, we integrate third-p
 ## Updates
 _10_07_2023_ - New Release v2.0: a large re-organization and improvement from v1.0. <br/>
 _24_05_2023_ - New Release Pretrained Models for Machine Translation. <br/>
-_15_03_2022_ - Merged a wrapper function folder to support off-shelf medical text processing. <br/>
-_10_03_2022_ - Made all tests avaiable in a ipynb file and updated the most recent version. <br/>
+_15_03_2022_ - Merged the ehrkit folder to support off-shelf medical text processing. <br/>
+_10_03_2022_ - Made all tests available in an ipynb file and updated the most recent version. <br/>
 _12_17_2021_ - New folder collated_tasks containing Fall 2021 functionalities added <br/>
 _05_11_2021_ - cleaned up the notebooks, fixed up the readme using depth=1 <br/>
 _05_04_2021_ - Tests run-through added in `tests` <br/>
@@ -81,7 +81,7 @@ pip install -r requirements.txt
 ```
 Then you are good to go!
 
-Not that this would work for basic mimic and wrapper functions, for the functions in `independent_tasks`, please check the corresponding README.
+Not that this would work for basic mimic and general functions, for the functions in `independent_tasks`, please check the corresponding README.
 
 
 #### MIMIC
@@ -95,12 +95,12 @@ cd mimic
 python demo.py
 ```
 
-#### wrapper_functions
+#### EHRKit
 We provide a various functions, some of them rely on third-parth libraries; we also provide our fine-tuned models too. 
-Please check the [README](wrapper_functions/README.md).
+Please check the [README](EHRKit/README.md).
 A quick start is to run the demo.py:
 ```bash
-cd wrapper_functions
+cd EHRKit
 python demo.py
 ```
 
@@ -110,4 +110,8 @@ Please create a GitHub issue if you have any questions, suggestions, requests or
 
 
 ## Contributors
-Update later.
+This project started at the year of 2018. There are many people participated and made contributions:
+
+Rui Yang, Qingcheng Zeng, Yujie Qiao, Keen You, Lucas Huang, Chia-Chun Hsieh, Benjamin Rosand, Jeremy Goldwasser, Dragomir Radev, Qingyu Chen, Irene Li.
+
+Especially in the memory of Prof. Dragomir Radev, who has dedicated so much to this project. 
