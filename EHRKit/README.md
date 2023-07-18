@@ -1,5 +1,5 @@
 
-# EHRKit-WF: we provide many off-shelf methods for processing medical text. 
+# EHRKit: we provide many off-shelf methods for processing medical text. 
 [![Python 3.6.13](https://img.shields.io/badge/python-3.6.13-green.svg)](https://www.python.org/downloads/release/python-360/)
 [![Python 3.8.8](https://img.shields.io/badge/python-3.8.8-green.svg)](https://www.python.org/downloads/release/python-380/)
 [![Python 3.8.16](https://img.shields.io/badge/python-3.8.16-green.svg)](https://www.python.org/downloads/release/python-380/)
