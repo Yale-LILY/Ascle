@@ -225,7 +225,7 @@ if __name__ == '__main__':
     question = "Which of the following is a risk factor for developing hyperlipidaemia?"
     choices = ["age", "family history", "obesity", "all of the above"]
     kit.update_and_delete_main_record(question)
-    print("The answer is..", kit.get_choice(choices))
+    print("The answer is..", kit.get_choice(choices, 4))
 
     print('\n\n')
     print("Question and Answering: ")
