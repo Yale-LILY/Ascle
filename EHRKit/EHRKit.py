@@ -80,10 +80,6 @@ class EHRKit:
 
     def update_marian_model(self, marian_model):
         self.marian_model = marian_model
-
-    def answer_generation(self, base_model, adapter_model, question, max_length, temperature, top_p, top_k, max_context_length_tokens):
-        ans = answer_generation(self, base_model, adapter_model, self.main_record, max_length, temperature, top_p, top_k, max_context_length_tokens)
-        return ans
     
     ''' Functions for textual record processing '''
     def get_abbreviations(self):
