@@ -12,8 +12,6 @@ from stanza_functions import (
     get_lemmas_stanza_biomed,
     get_dependency_stanza_biomed
 )
-from medical_chatbot import load_tokenizer_and_model, sample_decode, generate_prompt_with_history,answer_generation
-
 
 class EHRKit:
     """
