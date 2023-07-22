@@ -2,6 +2,7 @@ import torch
 from transformers import LlamaTokenizer,LlamaForCausalLM
 from peft import PeftModel
 import transformers
+from typing import TYPE_CHECKING, Any, Callable, Dict, List, Tuple, Type, Iterator
 
 def load_tokenizer_and_model(base_model = "decapoda-research/llama-7b-hf",
                              adapter_model = "project-baize/baize-healthcare-lora-7B",
@@ -62,14 +63,6 @@ def load_tokenizer_and_model(base_model = "decapoda-research/llama-7b-hf",
 
     model.eval()
     return tokenizer, model, device
-
-
-base_model, adapter_model, load_8bit="decapoda-research/llama-7b-hf", "project-baize/baize-healthcare-lora-7B", False
-tokenizer, model, device = load_tokenizer_and_model(base_model, adapter_model, load_8bit)
-
-from typing import TYPE_CHECKING, Any, Callable, Dict, List, Tuple, Type, Iterator
-
-max_context_length_tokens=180
 
 def sample_decode(
     input_ids: torch.Tensor,
@@ -146,7 +139,7 @@ def generate_prompt_with_history(text, history, tokenizer, max_length=2048):
     else:
         return None
 
-def answer_generation(base_model, adapter_model, question, max_length, temperature, top_p, top_k):
+def answer_generation(base_model, adapter_model, question, max_length, temperature, top_p, top_k, max_context_length_tokens):
     text = question
     history = ""
     inputs = generate_prompt_with_history(
@@ -163,4 +156,16 @@ def answer_generation(base_model, adapter_model, question, max_length, temperatu
           max_length=256)
     ans = [s for s in generate_result][-1]
     return ans
+
+base_model, adapter_model, load_8bit = "decapoda-research/llama-7b-hf", "project-baize/baize-healthcare-lora-7B", False
+tokenizer, model, device = load_tokenizer_and_model(base_model, adapter_model, load_8bit)
+question = "What is myopia？"
+max_length = 256
+temperature = 1.0
+top_p = 1.0
+top_k = 30
+max_context_length_tokens = 180
+ans = answer_generation(base_model, adapter_model, question, max_length, temperature, top_p, top_k, max_context_length_tokens).replace("\n[|Human|]","")
+
+print(ans)
 
