@@ -7,17 +7,6 @@ if __name__ == '__main__':
     # initialize EHRKit object
     kit = EHRKit()
 
-    base_model, adapter_model, load_8bit = "decapoda-research/llama-7b-hf", "project-baize/baize-healthcare-lora-7B", False
-    tokenizer, model, device = load_tokenizer_and_model(base_model, adapter_model, load_8bit)
-    question = "What is myopia？"
-    max_length = 256
-    temperature = 1.0
-    top_p = 1.0
-    top_k = 30
-    max_context_length_tokens = 180
-    kit.update_and_delete_main_record(question)
-    print(kit.answer_generation(base_model, adapter_model, question, max_length, temperature, top_p, top_k, max_context_length_tokens).replace("\n[|Human|]",""))
-
     print("========== Start of SciSpacy Functions ==========")
 
     print('\n\n')
