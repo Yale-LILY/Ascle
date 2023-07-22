@@ -176,9 +176,9 @@ class EHRKit:
         question = get_question(self.main_record,model_name)
         return question
 
-    def get_choice(self,candicates, model_name="russab0/distilbert-qa"):
+    def get_choice(self, text, question, choices, num_labels, model_checkpoint="microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext"):
         # candicates is a list of string, default length is 4
-        choice = get_choice(self.main_record,candicates,model_name)
+        choice = get_choice(text, self.main_record, choices, num_labels, model_checkpoint)
         return choice
 
     def get_layman_text(self, model_name="ireneli1024/bart-large-elife-finetuned",min_length=50, max_length=200):
