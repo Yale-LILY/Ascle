@@ -225,7 +225,7 @@ if __name__ == '__main__':
                "They are hyperpolarizing.",
                "They can be added.",
                "They spread long distances.",
-               "They present a refractory period."]"
+               "They present a refractory period."]
     num_labels = 5
     kit.update_and_delete_main_record(question)
     print("The answer is: ", kit.get_choice(text, question, choices, num_labels))
