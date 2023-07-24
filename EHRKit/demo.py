@@ -12,10 +12,7 @@ if __name__ == '__main__':
     print('\n\n')
     print('Abbreviations')
 
-    record = "Spinal and bulbar muscular atrophy (SBMA) is an " \
-             "inherited motor neuron disease caused by the expansion" \
-             "of a polyglutamine tract within the androgen receptor (AR)." \
-             "SBMA can be caused by this easily."
+    record = "The patient presented with SOB (shortness of breath) and tachycardia, indicating possible COVID-19 infection."
 
     kit.update_and_delete_main_record(record)
     print(kit.get_abbreviations())
@@ -221,11 +218,15 @@ if __name__ == '__main__':
     print(kit.get_translation_mt5('French'))
 
     print('\n\n')
-    print("Question and Answering: choose from 4 candidates")
+    print("Question and Answering: choose from 5 candidates")
     text = ""
-    question = "Which of the following is a risk factor for developing hyperlipidaemia?"
-    choices = ["age", "family history", "obesity", "all of the above"]
-    num_labels = 4
+    question = "The excitatory postsynaptic potentials:"
+    choices = ["They are all or nothing." ,
+               "They are hyperpolarizing.",
+               "They can be added.",
+               "They spread long distances.",
+               "They present a refractory period."]"
+    num_labels = 5
     kit.update_and_delete_main_record(question)
     print("The answer is: ", kit.get_choice(text, question, choices, num_labels))
 
