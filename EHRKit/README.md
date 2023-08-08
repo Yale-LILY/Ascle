@@ -124,6 +124,82 @@ kit.get_clusters(k=2)
    3  People can buy aspirin over the ...     1
 ```
 
+### More examples
+```python
+# create kit 
+kit = EHRKit()
+
+# example 1: basic NLP function - get abbreviation terms
+# user-defined input text
+main_record = """
+              Spinal and bulbar muscular atrophy (SBMA) is an inherited 
+              motor neuron disease caused by the expansion of a polyglutamine 
+              tract within the androgen receptor.
+              """
+kit.update_and_delete_main_record(main_record)
+
+# call the function
+kit.get_abbreviations()
+
+# following is the example output
+""">> [('SBMA', 'Spinal and bulbar muscular atrophy')]"""
+
+
+# example 2: generation function - Question Answering (Answer Generation)
+
+# load model and tokenizer
+base_model, adapter_model, load_8bit = "decapoda-research/llama-7b-hf", 
+                                       "project-baize/baize-healthcare-lora-7B", 
+                                       False
+tokenizer, model, device = load_tokenizer_and_model(base_model, 
+                                                    adapter_model, 
+                                                    load_8bit)
+                                                    
+# setup parameters
+max_length = 256
+temperature = 1.0
+top_p = 1.0
+top_k = 30
+max_context_length_tokens = 180
+
+question = "What is myopia?"
+
+# call the answer-generation function and print the output 
+print(answer_generation(base_model, adapter_model, question, max_length, 
+temperature, top_p, top_k, max_context_length_tokens).replace("\n[|Human|]",""))
+
+# following is the example output
+""">> Myopia, also known as nearsightedness, is a visual impairment 
+   in which distant objects are blurred and close objects appear 
+   clear. It is caused by the elongation of the eyeball, which 
+   results in the cornea being too steeply angled."""
+
+# example 3: generation function - Understandable Translation
+main_record = """
+              The patient presents with symptoms of acute bronchitis, 
+              including cough, chest congestion, and mild fever. 
+              Auscultation reveals coarse breath sounds and occasional 
+              wheezing. Based on the clinical examination, a diagnosis 
+              of acute bronchitis is made, and the patient is prescribed 
+              a short course of bronchodilators and advised to rest and 
+              stay hydrated.
+              """
+# choose the model
+layman_model = "ireneli1024/bart-large-elife-finetuned"
+kit.update_and_delete_main_record(content)
+
+# call the understandable translation function and print the output
+print(kit.get_layman_text(layman_model, min_length=20, max_length=70))
+
+# following is the example output
+""">> The patient presents with symptoms of acute bronchitis including 
+   cough, chest congestion and mild fever. Auscultation reveals coarse 
+   breath sounds and occasional wheezing. Based on these symptoms and 
+   the patient's history of previous infections with the same condition, 
+   the doctor decides that the patient is likely to have a cold or bronch."""
+
+```
+
 ### Key Functions
 - Abbreviation Detection & Expansion
 - Hyponym Detection
