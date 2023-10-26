@@ -3,7 +3,7 @@
 </p>
 
 
-# EHRKit: A Python Natural Language Processing Toolkit for Electronic Health Record Texts
+# MedGen: A Python Natural Language Processing Toolkit for Medical Text Processing
 
 
 [![Python 3.6.13](https://img.shields.io/badge/python-3.6.13-green.svg)](https://www.python.org/downloads/release/python-360/)
