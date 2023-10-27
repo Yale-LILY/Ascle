@@ -10,25 +10,10 @@
 
 MedGen is a comprehensive natural language processing (NLP) toolkit designed specifically for medical text processing. MedGen is tailored for biomedical researchers and healthcare professionals, providing them with an easy-to-use, all-in-one solution that requires minimal programming expertise. 
 
-It includes 
+### Framework of MedGen 
 (1) Generative Functions: For the first time, MedGen includes four advanced and challenging  generative functions: question answering, text summarization, text simplification, and machine translation; 
 (2) Basic NLP Functions: MedGen consists of 12 essential NLP functions such as word tokenization and sentence segmentation; and 
 (3) Query and Search Capabilities: MedGen provides user-friendly query and search functions on text corpora.
-
-
-### File Organization
-
-- EHRKit
-  - mimiciii: main mimic-iii support
-  - ehrkit: main general function support
-  - independent_tasks: individual tasks and functions with tutorials
-    - collated tasks
-    - QueryExtraction
-    - extractiveSummarization
-    - mimic_icd9_coding
-    - pubmed
-    - tutorials
-
 
 <p align="center">
    <img src="MedGen.png">
