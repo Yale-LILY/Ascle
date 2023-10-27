@@ -22,14 +22,13 @@ MedGen is a comprehensive natural language processing (NLP) toolkit designed spe
 
 ## Table of Contents
 
-1. [Updates](#updates)
-2. [Data](#data)
-3. [Setup](#setup)
-4. [Toolkit](#toolkit)
-5. [Get Involved](#get-involved)
-6. [Off-shelf Functions](#get-involved)
-<!-- 6. [Citation](#get-involved) -->
-
+* [Updates](#updates)
+* [Data](#data)
+* [Setup](#setup)
+* [Toolkit](#toolkit)
+* [Get Involved](#get-involved)
+* [Off-shelf Functions](#get-involved)
+* [Citation](#citation)
 
 ## Updates
 _10_07_2023_ - New Release v2.0: a large re-organization and improvement from v1.0. <br/>
@@ -69,16 +68,8 @@ Then you are good to go!
 
 Not that this would work for basic mimic and general functions, for the functions in `independent_tasks`, please check the corresponding README.
 
-### Demo
-
-A quick start is to run the demo.py:
-```bash
-cd mimic
-python demo.py
-```
-
 ### MedGen
-We provide a various functions, some of them rely on third-parth libraries; we also provide our fine-tuned models too. 
+We provide a various generative functions and basice NLP functions, some of them rely on third-parth libraries; we also provide our fine-tuned models too. 
 Please check the [README](MedGen/README.md).
 A quick start is to run the demo.py:
 ```bash
@@ -94,7 +85,18 @@ Please create a GitHub issue if you have any questions, suggestions, requests or
 ## Contributors
 This project started at the year of 2018. There are many people participated and made contributions:
 
-Rui Yang*, Qingcheng Zeng*, Keen You*, Yujie Qiao*, Lucas Huang, Chia-Chun Hsieh, Benjamin Rosand, Jeremy Goldwasser, Amisha D Dave, Tiarnan D.L. Keenan, 
+Rui Yang*, Qingcheng Zeng*, Keen You*, Yujie Qiao*, Lucas Huang, Chia-Chun Hsieh, Benjamin Rosand, Jeremy Goldwasser, Amisha D Dave, <pr> Tiarnan D.L. Keenan, 
 Dragomir Radev, Zhiyong Lu, Qingyu Chen, Irene Li
 
-Especially in the memory of Prof. Dragomir Radev, who has dedicated so much to this project. 
+Especially in the memory of Prof. Dragomir Radev, who has dedicated so much to this project.
+
+## Citation
+```bibtext
+@misc{li2023ehrkit,
+      title={EHRKit: A Python Natural Language Processing Toolkit for Electronic Health Record Texts}, 
+      author={Irene Li and Keen You and Yujie Qiao and Lucas Huang and Chia-Chun Hsieh and Benjamin Rosand and Jeremy Goldwasser and Dragomir Radev},
+      year={2023},
+      eprint={2204.06604},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
