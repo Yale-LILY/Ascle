@@ -25,9 +25,9 @@ MedGen is a comprehensive natural language processing (NLP) toolkit designed spe
 * [Updates](#updates)
 * [Data](#data)
 * [Setup](#setup)
-* [Toolkit](#toolkit)
+<!-- * [Toolkit](#toolkit) -->
 * [Get Involved](#get-involved)
-* [Off-shelf Functions](#get-involved)
+<!-- * [Off-shelf Functions](#get-involved)-->
 * [Citation](#citation)
 
 ## Updates
