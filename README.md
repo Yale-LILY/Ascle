@@ -18,8 +18,7 @@ MedGen is a comprehensive natural language processing (NLP) toolkit designed spe
 <p align="center">
    <img src="MedGen.jp2">
 </p>
-⚙️indicates that we have our fine-tuned models for this particular task.\\
-⭐️indicates that we conducted evaluations for this particular task.
+⚙️indicates that we have our fine-tuned models for this particular task. <br> ⭐️indicates that we conducted evaluations for this particular task.
 
 ## Table of Contents
 
