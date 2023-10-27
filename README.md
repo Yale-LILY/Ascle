@@ -64,15 +64,12 @@ python3 -m venv ehrvir/
 source ehrvir/bin/activate
 pip install -r requirements.txt
 ```
-Then you are good to go!
 
-Not that this would work for basic mimic and general functions, for the functions in `independent_tasks`, please check the corresponding README.
+### MedGen Demo
+We provide a various generative functions and basice NLP functions. A quick start is to run the demo.py:
 
-### MedGen
-We provide a various generative functions and basice NLP functions, some of them rely on third-parth libraries; we also provide our fine-tuned models too. 
-Please check the [README](MedGen/README.md).
-A quick start is to run the demo.py:
-```bash
+```
+bash
 cd MedGen
 python demo.py
 ```
@@ -85,7 +82,7 @@ Please create a GitHub issue if you have any questions, suggestions, requests or
 ## Contributors
 This project started at the year of 2018. There are many people participated and made contributions:
 
-Rui Yang*, Qingcheng Zeng*, Keen You*, Yujie Qiao*, Lucas Huang, Chia-Chun Hsieh, Benjamin Rosand, Jeremy Goldwasser, Amisha D Dave, <pr> Tiarnan D.L. Keenan, 
+Rui Yang*, Qingcheng Zeng*, Keen You*, Yujie Qiao*, Lucas Huang, Chia-Chun Hsieh, Benjamin Rosand, Jeremy Goldwasser,  <pr> Amisha D Dave, Tiarnan D.L. Keenan, 
 Dragomir Radev, Zhiyong Lu, Qingyu Chen, Irene Li
 
 Especially in the memory of Prof. Dragomir Radev, who has dedicated so much to this project.
