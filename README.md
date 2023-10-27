@@ -51,7 +51,8 @@ The other dataset that is required for some of the modules is the [pubmed datase
 
 ### Download Repository
 
-You can download MedGeb as a git repository, simply clone to your choice of directories (keep depth small to keep the old versions out and reduce size)
+You can download MedGeb as a git repository, simply clone to your choice of directories (keep depth small to keep the old versions out and reduce size).
+
 ```
 git clone https://github.com/Yale-LILY/MedGen.git
 ```
@@ -66,7 +67,7 @@ pip install -r requirements.txt
 ```
 
 ### MedGen Demo
-We provide a various generative functions and basice NLP functions. A quick start is to run the demo.py:
+We provide various generative functions and basice NLP functions. A quick start is to run the demo.py:
 
 ```
 bash
