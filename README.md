@@ -18,7 +18,8 @@ MedGen is a comprehensive natural language processing (NLP) toolkit designed spe
 <p align="center">
    <img src="MedGen.jp2">
 </p>
-
+⚙️indicates that we have our fine-tuned models for this particular task.
+⭐️indicates that we conducted evaluations for this particular task.
 ## Table of Contents
 
 1. [Updates](#updates)
@@ -45,7 +46,7 @@ _04_22_2021_ - Completed the tutorials and readme. <br/>
 _04_20_2021_ - Spring functionality finished -- mimic classification, summarization, and query extraction <br/>
 
 ## Data
-EHRKit is built for use with Medical Information Mart for Intensive Care-III (MIMIC-III). It requires this dataset to be downloaded. This dataset is freely available to the public, but it requires completion of an online training course. Information on accessing MIMIC-III can be found at https://mimic.physionet.org/gettingstarted/access. Once this process is complete, it is recommended to download the mimic files to the folder `data/`
+MedGen is built for use with Medical Information Mart for Intensive Care-III (MIMIC-III). It requires this dataset to be downloaded. This dataset is freely available to the public, but it requires completion of an online training course. Information on accessing MIMIC-III can be found at https://mimic.physionet.org/gettingstarted/access. Once this process is complete, it is recommended to download the mimic files to the folder `data/`
 
 The other dataset that is required for some of the modules is the [pubmed dataset](https://www.ncbi.nlm.nih.gov/CBBresearch/Wilbur/IRET/DATASET/), this dataset contains a large number of medical articles. The required downloading and parsing is all performed in the `pubmed/` folder. First run `bash download_pubmed.sh` and then `python parse_articles.py`. This process is also detailed in the tutorial notebook for summarization: `tutorials/naiveBayes.ipynb`
 
@@ -53,15 +54,15 @@ The other dataset that is required for some of the modules is the [pubmed datase
 
 ### Download Repository
 
-You can download EHRKit as a git repository, simply clone to your choice of directories (keep depth small to keep the old versions out and reduce size)
+You can download MedGeb as a git repository, simply clone to your choice of directories (keep depth small to keep the old versions out and reduce size)
 ```
-git clone https://github.com/Yale-LILY/EHRKit.git
+git clone https://github.com/Yale-LILY/MedGen.git
 ```
 
 #### Environment
 
 ```
-cd EHRKit
+cd MedGen
 python3 -m venv ehrvir/
 source ehrvir/bin/activate
 pip install -r requirements.txt
@@ -72,7 +73,7 @@ Not that this would work for basic mimic and general functions, for the function
 
 
 #### MIMIC
-EHRKit requires Medical Information Mart for Intensive Care-III (MIMIC-III) database to be installed. This database is freely available to the public, but it requires completion of an online training course. Information on accessing MIMIC-III can be found at https://mimic.physionet.org/gettingstarted/access.
+MedGen requires Medical Information Mart for Intensive Care-III (MIMIC-III) database to be installed. This database is freely available to the public, but it requires completion of an online training course. Information on accessing MIMIC-III can be found at https://mimic.physionet.org/gettingstarted/access.
 
 Once you have gotten access, you can put the mimic data as required in mimic [README](mimic/README.md), and setup mysql username and password.
 
@@ -82,12 +83,12 @@ cd mimic
 python demo.py
 ```
 
-#### EHRKit
+#### MedGen
 We provide a various functions, some of them rely on third-parth libraries; we also provide our fine-tuned models too. 
-Please check the [README](EHRKit/README.md).
+Please check the [README](MedGen/README.md).
 A quick start is to run the demo.py:
 ```bash
-cd EHRKit
+cd MedGen
 python demo.py
 ```
 
