@@ -16,7 +16,7 @@ MedGen is a comprehensive natural language processing (NLP) toolkit designed spe
 (3) Query and Search Capabilities: MedGen provides user-friendly query and search functions on text corpora.
 
 <p align="center">
-   <img src="MedGen.png">
+   <img src="MedGen.jp2">
 </p>
 
 ## Table of Contents
