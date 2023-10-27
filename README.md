@@ -31,8 +31,6 @@ MedGen is a comprehensive natural language processing (NLP) toolkit designed spe
 <!-- 6. [Citation](#get-involved) -->
 
 
-
-
 ## Updates
 _10_07_2023_ - New Release v2.0: a large re-organization and improvement from v1.0. <br/>
 _24_05_2023_ - New Release Pretrained Models for Machine Translation. <br/>
@@ -59,7 +57,7 @@ You can download MedGeb as a git repository, simply clone to your choice of dire
 git clone https://github.com/Yale-LILY/MedGen.git
 ```
 
-#### Environment
+### Environment
 
 ```
 cd MedGen
@@ -71,11 +69,7 @@ Then you are good to go!
 
 Not that this would work for basic mimic and general functions, for the functions in `independent_tasks`, please check the corresponding README.
 
-
-#### MIMIC
-MedGen requires Medical Information Mart for Intensive Care-III (MIMIC-III) database to be installed. This database is freely available to the public, but it requires completion of an online training course. Information on accessing MIMIC-III can be found at https://mimic.physionet.org/gettingstarted/access.
-
-Once you have gotten access, you can put the mimic data as required in mimic [README](mimic/README.md), and setup mysql username and password.
+### Demo
 
 A quick start is to run the demo.py:
 ```bash
@@ -83,7 +77,7 @@ cd mimic
 python demo.py
 ```
 
-#### MedGen
+### MedGen
 We provide a various functions, some of them rely on third-parth libraries; we also provide our fine-tuned models too. 
 Please check the [README](MedGen/README.md).
 A quick start is to run the demo.py:
