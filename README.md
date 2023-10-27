@@ -5,7 +5,6 @@
 
 # MedGen: A Python Natural Language Processing Toolkit for Medical Text Processing
 
-
 [![Python 3.6.13](https://img.shields.io/badge/python-3.6.13-green.svg)](https://www.python.org/downloads/release/python-360/)
 [![Python 3.8.16](https://img.shields.io/badge/python-3.8.16-green.svg)](https://www.python.org/downloads/release/python-380/)
 
@@ -29,7 +28,7 @@ Moreover, if users want to deal with general medical texts, we integrate third-p
 
 
 <p align="center">
-   <img src="ehrkit.jpg" alt="EHRKit"/>
+   <img src="MedGen.png">
 </p>
 
 ## Table of Contents
