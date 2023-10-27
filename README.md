@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="EHRLogo.png" alt="EHRKit"/>
+   <img src="MedGen_logo.png">
 </p>
 
 
