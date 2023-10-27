@@ -99,6 +99,7 @@ Please create a GitHub issue if you have any questions, suggestions, requests or
 ## Contributors
 This project started at the year of 2018. There are many people participated and made contributions:
 
-Rui Yang, Qingcheng Zeng, Yujie Qiao, Keen You, Lucas Huang, Chia-Chun Hsieh, Benjamin Rosand, Jeremy Goldwasser, Dragomir Radev, Qingyu Chen, Irene Li.
+Rui Yang*, Qingcheng Zeng*, Keen You*, Yujie Qiao*, Lucas Huang, Chia-Chun Hsieh, Benjamin Rosand, Jeremy Goldwasser, Amisha D Dave, Tiarnan D.L. Keenan, 
+Dragomir Radev, Zhiyong Lu, Qingyu Chen, Irene Li
 
 Especially in the memory of Prof. Dragomir Radev, who has dedicated so much to this project. 
