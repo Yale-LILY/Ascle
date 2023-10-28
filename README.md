@@ -23,11 +23,9 @@ MedGen is a comprehensive natural language processing (NLP) toolkit designed spe
 ## Table of Contents
 
 * [Updates](#updates)
-* [Data](#data)
 * [Setup](#setup)
-<!-- * [Toolkit](#toolkit) -->
+* [Fine-tuned Models](#models)
 * [Get Involved](#get-involved)
-<!-- * [Off-shelf Functions](#get-involved)-->
 * [Citation](#citation)
 
 ## Updates
@@ -41,11 +39,6 @@ _05_04_2021_ - Tests run-through added in `tests` <br/>
 _04_22_2021_ - Freezing development <br/>
 _04_22_2021_ - Completed the tutorials and readme. <br/>
 _04_20_2021_ - Spring functionality finished -- mimic classification, summarization, and query extraction <br/>
-
-## Data
-MedGen is built for use with Medical Information Mart for Intensive Care-III (MIMIC-III). It requires this dataset to be downloaded. This dataset is freely available to the public, but it requires completion of an online training course. Information on accessing MIMIC-III can be found at https://mimic.physionet.org/gettingstarted/access. Once this process is complete, it is recommended to download the mimic files to the folder `data/`
-
-The other dataset that is required for some of the modules is the [pubmed dataset](https://www.ncbi.nlm.nih.gov/CBBresearch/Wilbur/IRET/DATASET/), this dataset contains a large number of medical articles. The required downloading and parsing is all performed in the `pubmed/` folder. First run `bash download_pubmed.sh` and then `python parse_articles.py`. This process is also detailed in the tutorial notebook for summarization: `tutorials/naiveBayes.ipynb`
 
 ## Setup
 
@@ -74,6 +67,9 @@ bash
 cd MedGen
 python demo.py
 ```
+
+## Fine-tuned Models
+
 
 ## Get involved
 
