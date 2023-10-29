@@ -71,7 +71,10 @@ python demo.py
 ## Fine-tuned Models
 In MedGen, users can access any publicly available language model. Additionally, we provide users with 32 of our fine-tuned models which are suitable for multiple-choice QA, text simplification, and machine translation tasks.
 
-Plase feel to download our fine-tuned models: [Multi-choice QA;](https://huggingface.co/RUI525)[Text Simplification;][(https://huggingface.co/qcz](https://huggingface.co/ireneli1024))[Machine Translation(mT5);](https://huggingface.co/qcz)[Machine Translation(MarianMT)](https://huggingface.co/irenelizihui)
+Plase feel to download our fine-tuned models: [Multi-choice QA](https://huggingface.co/RUI525)
+[Text Simplification](https://huggingface.co/ireneli1024)
+[Machine Translation(mT5)](https://huggingface.co/qcz)
+[Machine Translation(MarianMT)](https://huggingface.co/irenelizihui)
 
 
 ## Get involved
