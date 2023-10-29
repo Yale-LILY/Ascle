@@ -67,6 +67,60 @@ bash
 cd MedGen
 python demo.py
 ```
+#### Text Simplification
+```python
+# create MedGen 
+med = MedGen()
+
+# Text Simplification
+main_record = """
+              The patient presents with symptoms of acute bronchitis,
+              including cough, chest congestion, and mild fever.
+              Auscultation reveals coarse breath sounds and occasional 
+              wheezing. Based on the clinical examination, a diagnosis
+              of acute bronchitis is made, and the patient is prescribed 
+              a short course of bronchodilators and advised to rest and
+              stay hydrated.
+              """
+
+# choose the model
+layman_model = "ireneli1024/bart-large-elife-finetuned"
+
+med.update_and_delete_main_record(content)
+
+# call the text simplification function and print the output
+print(med.get_layman_text(layman_model, min_length=20, max_length=70))
+
+>> """
+   The patient presents with symptoms of acute bronchitis including
+   cough, chest congestion and mild fever. Auscultation reveals coarse 
+   breath sounds and occasional wheezing. Based on these symptoms and 
+   the patient's history of previous infections with the same condition, 
+   the doctor decides that the patient is likely to have a cold or bronch.
+   """
+```
+
+#### Machine Translation
+```python
+main_record = """
+              Myeloid derived suppressor cells (MDSC) are immature myeloid 
+              cells with immunosuppressive activity. They accumulate in 
+              tumor-bearing mice and humans with different types of cancer, 
+              including hepatocellular carcinoma (HCC).
+              """
+              
+med.update_and_delete_main_record(record)
+
+# call the machine translation function and print the output
+print(med.get_translation_mt5("French"))
+
+>> """
+   Les cellules suppressives dérivées de myéloïdes (MDSC) sont des
+   cellules myéloïdes immatures ayant une activité immunosuppressive, 
+   accumulées chez des souris et des humains ayant différents types de 
+   cancer, y compris le carcinome hépatocellulaire (HCC).
+   """
+```
 
 ## Fine-tuned Models
 In MedGen, users can access any publicly available language model. Additionally, we provide users with 32 of our fine-tuned models which are suitable for multiple-choice QA, text simplification, and machine translation tasks.
@@ -74,8 +128,8 @@ In MedGen, users can access any publicly available language model. Additionally,
 Plase feel to download our fine-tuned models: 
 * [Multi-choice QA](https://huggingface.co/RUI525) 
 * [Text Simplification](https://huggingface.co/ireneli1024)
-* [Machine Translation(mT5)](https://huggingface.co/qcz)
-* [Machine Translation(MarianMT)](https://huggingface.co/irenelizihui)
+* [Machine Translation (mT5)](https://huggingface.co/qcz)
+* [Machine Translation (MarianMT)](https://huggingface.co/irenelizihui)
 
 
 ## Get involved
