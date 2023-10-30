@@ -1,7 +1,7 @@
 
  # 📔 Documentation
 
-<img src="https://github.com/karenacorn99/LILY-EHRKit/blob/main/EHRLogo.png" alt="drawing" width="140"/> 
+<img src="MedGen.png" alt="drawing" width="140"/> 
 
 A Python Natural Language Processing Toolkit for Electronic Health Record Texts
 ## Key Modules and Functions
