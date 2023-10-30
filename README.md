@@ -29,7 +29,7 @@ MedGen is a comprehensive natural language processing (NLP) toolkit designed spe
 * [Citation](#citation)
 
 ## Updates
-_28_10_2023_ - We changed the toolkit name to MedGen from EHRKit! <br/>
+_28_10_2023_ - New Release v2.1: we changed the toolkit name to MedGen from EHRKit, easier to use! <br/>
 _10_07_2023_ - New Release v2.0: a large re-organization and improvement from v1.0. <br/>
 _24_05_2023_ - New Release Pretrained Models for Machine Translation. <br/>
 _15_03_2022_ - Merged the ehrkit folder to support off-shelf medical text processing. <br/>
