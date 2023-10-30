@@ -38,11 +38,11 @@ _24_05_2023_ - New Release Pretrained Models for Machine Translation. <br/>
 _15_03_2022_ - Merged the ehrkit folder to support off-shelf medical text processing. <br/>
 _10_03_2022_ - Made all tests available in an ipynb file and updated the most recent version. <br/>
 _12_17_2021_ - New folder collated_tasks containing Fall 2021 functionalities added <br/>
-_05_11_2021_ - cleaned up the notebooks, fixed up the readme using depth=1 <br/>
-_05_04_2021_ - Tests run-through added in `tests` <br/>
-_04_22_2021_ - Freezing development <br/>
+_05_11_2021_ - cleaned up the notebooks, fixed up the readme using depth=1. <br/>
+_05_04_2021_ - Tests run-through added in `tests`. <br/>
+_04_22_2021_ - Freezing development. <br/>
 _04_22_2021_ - Completed the tutorials and readme. <br/>
-_04_20_2021_ - Spring functionality finished -- mimic classification, summarization, and query extraction <br/>
+_04_20_2021_ - Spring functionality finished -- mimic classification, summarization, and query extraction. <br/>
 
 ## Setup
 
