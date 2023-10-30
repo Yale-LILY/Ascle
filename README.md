@@ -67,6 +67,8 @@ pip install -r requirements.txt
 We provide various generative functions and basic NLP functions. A quick start is to run the demo.py:
 
 ```
+from MedGen import MedGen
+
 cd MedGen
 python demo.py
 ```
