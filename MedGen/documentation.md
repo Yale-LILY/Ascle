@@ -1,9 +1,9 @@
 
  # 📔 Documentation
 
-<img src="MedGen.png" alt="drawing" width="140"/> 
+<img src="https://github.com/Yale-LILY/MedGen/blob/v2.1/MedGen_logo.png" alt="drawing" width="1000"/> 
 
-A Python Natural Language Processing Toolkit for Electronic Health Record Texts
+A comprehensive natural language processing (NLP) toolkit designed specifically for medical text processing.
 ## Key Modules and Functions
 
 ### ✨multi_doc_functions.py 
