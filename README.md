@@ -9,7 +9,7 @@
 [![Python 3.8.13](https://img.shields.io/badge/python-3.8.13-green.svg)](https://www.python.org/downloads/release/python-380/)
 [![Python 3.8.16](https://img.shields.io/badge/python-3.8.16-green.svg)](https://www.python.org/downloads/release/python-380/)
 
-MedGen is a comprehensive natural language processing (NLP) toolkit designed specifically for medical text processing. MedGen is tailored for biomedical researchers and healthcare professionals, providing them with an easy-to-use, all-in-one solution that requires minimal programming expertise. 
+We introduce MedGen, a comprehensive natural language processing (NLP) toolkit designed specifically for medical text processing. MedGen is tailored for biomedical researchers and healthcare professionals, providing them with an easy-to-use, all-in-one solution that requires minimal programming expertise. 
 
 ### Framework of MedGen 
 (1) Generative Functions: For the first time, MedGen includes four advanced and challenging  generative functions: question answering, text summarization, text simplification, and machine translation; 
@@ -30,6 +30,7 @@ MedGen is a comprehensive natural language processing (NLP) toolkit designed spe
 * [Fine-tuned Models](#fine-tuned-models)
 * [Get Involved](#get-involved)
 * [Citation](#citation)
+* [Contact](#contact)
 
 ## Updates
 _28_10_2023_ - New Release v2.1: we changed the toolkit name to MedGen from EHRKit, easier to use! <br/>
@@ -37,12 +38,12 @@ _10_07_2023_ - New Release v2.0: a large re-organization and improvement from v1
 _24_05_2023_ - New Release Pretrained Models for Machine Translation. <br/>
 _15_03_2022_ - Merged the ehrkit folder to support off-shelf medical text processing. <br/>
 _10_03_2022_ - Made all tests available in an ipynb file and updated the most recent version. <br/>
-_12_17_2021_ - New folder collated_tasks containing Fall 2021 functionalities added <br/>
-_05_11_2021_ - cleaned up the notebooks, fixed up the readme using depth=1. <br/>
-_05_04_2021_ - Tests run-through added in `tests`. <br/>
-_04_22_2021_ - Freezing development. <br/>
-_04_22_2021_ - Completed the tutorials and readme. <br/>
-_04_20_2021_ - Spring functionality finished -- mimic classification, summarization, and query extraction. <br/>
+_17_12_2021_ - New folder collated_tasks containing Fall 2021 functionalities added <br/>
+_11_05_2021_ - cleaned up the notebooks, fixed up the readme using depth=1. <br/>
+_04_05_2021_ - Tests run-through added in `tests`. <br/>
+_22_04_2021_ - Freezing development. <br/>
+_22_04_2021_ - Completed the tutorials and readme. <br/>
+_20_04_2021_ - Spring functionality finished -- mimic classification, summarization, and query extraction. <br/>
 
 ## Setup
 
@@ -162,3 +163,9 @@ Especially in the memory of Prof. Dragomir Radev, who has dedicated so much to t
       archivePrefix={arXiv},
       primaryClass={cs.CL}
 }
+```
+
+## Contact
+We will continue to maintain and update this repository. If you have any questions, feel free to contact us. <br/>
+Prof. Irene Li: ireneli@ds.itc.u-tokyo.ac.jp <br/>
+Rui Yang: yang_rui@u.nus.edu
