@@ -29,6 +29,7 @@ MedGen is a comprehensive natural language processing (NLP) toolkit designed spe
 * [Citation](#citation)
 
 ## Updates
+_28_10_2023_ - We changed the toolkit name to MedGen from EHRKit! <br/>
 _10_07_2023_ - New Release v2.0: a large re-organization and improvement from v1.0. <br/>
 _24_05_2023_ - New Release Pretrained Models for Machine Translation. <br/>
 _15_03_2022_ - Merged the ehrkit folder to support off-shelf medical text processing. <br/>
@@ -44,7 +45,7 @@ _04_20_2021_ - Spring functionality finished -- mimic classification, summarizat
 
 ### Download Repository
 
-You can download MedGeb as a git repository, simply clone to your choice of directories (keep depth small to keep the old versions out and reduce size).
+You can download MedGeb as a git repository; simply clone to your choice of directories (keep depth small to keep the old versions out and reduce size).
 
 ```
 git clone https://github.com/Yale-LILY/MedGen.git
@@ -60,7 +61,7 @@ pip install -r requirements.txt
 ```
 
 ### MedGen Demo
-We provide various generative functions and basice NLP functions. A quick start is to run the demo.py:
+We provide various generative functions and basic NLP functions. A quick start is to run the demo.py:
 
 ```
 bash
