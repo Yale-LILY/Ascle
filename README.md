@@ -64,10 +64,11 @@ pip install -r requirements.txt
 We provide various generative functions and basic NLP functions. A quick start is to run the demo.py:
 
 ```
-bash
 cd MedGen
 python demo.py
 ```
+Note: this may take some time, as some packages will be downloaded. 
+
 #### Text Simplification
 ```python
 # create MedGen 
@@ -87,7 +88,7 @@ main_record = """
 # choose the model
 layman_model = "ireneli1024/bart-large-elife-finetuned"
 
-med.update_and_delete_main_record(content)
+med.update_and_delete_main_record(main_record)
 
 # call the text simplification function and print the output
 print(med.get_layman_text(layman_model, min_length=20, max_length=70))
@@ -110,7 +111,7 @@ main_record = """
               including hepatocellular carcinoma (HCC).
               """
               
-med.update_and_delete_main_record(record)
+med.update_and_delete_main_record(main_record)
 
 # call the machine translation function and print the output
 print(med.get_translation_mt5("French"))

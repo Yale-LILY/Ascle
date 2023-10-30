@@ -1,4 +1,4 @@
-ROOT_EHR_DIR = '/lada2/lily/zl379/Year4/EHRTest/EHRKit/tutorials/' # set your root EHRKit directory here (with the '/' at the end)
+ROOT_EHR_DIR = '/lada2/lily/zl379/Year4/EHRTest/MedGen/tutorials/' # set your root MedGen directory here (with the '/' at the end)
 
 import sys
 import os

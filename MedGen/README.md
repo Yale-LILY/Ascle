@@ -1,5 +1,5 @@
 
-# EHRKit: we provide many off-shelf methods for processing medical text. 
+# MedGen: we provide many off-shelf methods for processing medical text. 
 [![Python 3.6.13](https://img.shields.io/badge/python-3.6.13-green.svg)](https://www.python.org/downloads/release/python-360/)
 [![Python 3.8.8](https://img.shields.io/badge/python-3.8.8-green.svg)](https://www.python.org/downloads/release/python-380/)
 [![Python 3.8.16](https://img.shields.io/badge/python-3.8.16-green.svg)](https://www.python.org/downloads/release/python-380/)
@@ -53,11 +53,12 @@ For a comprehensive tutorial, check the [tutorial notebook](https://github.com/k
 
 ### Single-document Task Example
 Single document tasks operates on a single free-text record.
+
 ```python
-from EHRKit import EHRkit
+from MedGen import MedGen
 
 # create kit 
-kit = EHRKit()
+kit = MedGen()
 
 main_record = "Spinal and bulbar muscular atrophy (SBMA) is an \
 inherited motor neuron disease caused by the expansion \
@@ -70,44 +71,45 @@ kit.update_and_delete_main_record(main_record)
 # call single-document tasks on main_record
 kit.get_abbreviations()
 >> [('SBMA', 'Spinal and bulbar muscular atrophy'),
- ('SBMA', 'Spinal and bulbar muscular atrophy'),
- ('AR', 'androgen receptor')]
+    ('SBMA', 'Spinal and bulbar muscular atrophy'),
+    ('AR', 'androgen receptor')]
 ```
 
 ### Multi-document Task Example
 Multi-document tasks operate on several free-text records.
+
 ```python
-from EHRKit import EHRkit
+from MedGen import MedGen
 
 # create kit 
-kit = EHRKit()
+kit = MedGen()
 
 ''' A document about neuron.'''
-record = "Neurons (also called neurones or nerve cells) are the fundamental units of the brain and nervous system, " \
-         "the cells responsible for receiving sensory input from the external world, for sending motor commands to " \
-         "our muscles, and for transforming and relaying the electrical signals at every step in between. More than " \
-         "that, their interactions define who we are as people. Having said that, our roughly 100 billion neurons do" \
-         " interact closely with other cell types, broadly classified as glia (these may actually outnumber neurons, " \
+record = "Neurons (also called neurones or nerve cells) are the fundamental units of the brain and nervous system, "
+         "the cells responsible for receiving sensory input from the external world, for sending motor commands to "
+         "our muscles, and for transforming and relaying the electrical signals at every step in between. More than "
+         "that, their interactions define who we are as people. Having said that, our roughly 100 billion neurons do"
+         " interact closely with other cell types, broadly classified as glia (these may actually outnumber neurons, "
          "although it’s not really known)."
-         
+
 ''' A document about neural network. '''
-cand1 = "A neural network is a series of algorithms that endeavors to recognize underlying relationships in a set of " \
-        "data through a process that mimics the way the human brain operates. In this sense, neural networks refer to " \
+cand1 = "A neural network is a series of algorithms that endeavors to recognize underlying relationships in a set of "
+        "data through a process that mimics the way the human brain operates. In this sense, neural networks refer to "
         "systems of neurons, either organic or artificial in nature."
-        
+
 ''' A document about aspirin. '''
-cand2 = "Prescription aspirin is used to relieve the symptoms of rheumatoid arthritis (arthritis caused by swelling " \
-        "of the lining of the joints), osteoarthritis (arthritis caused by breakdown of the lining of the joints), " \
-        "systemic lupus erythematosus (condition in which the immune system attacks the joints and organs and causes " \
-        "pain and swelling) and certain other rheumatologic conditions (conditions in which the immune system " \
+cand2 = "Prescription aspirin is used to relieve the symptoms of rheumatoid arthritis (arthritis caused by swelling "
+        "of the lining of the joints), osteoarthritis (arthritis caused by breakdown of the lining of the joints), "
+        "systemic lupus erythematosus (condition in which the immune system attacks the joints and organs and causes "
+        "pain and swelling) and certain other rheumatologic conditions (conditions in which the immune system "
         "attacks parts of the body)."
 
 ''' Another document about aspirin. '''
-cand3 = "People can buy aspirin over the counter without a prescription. Everyday uses include relieving headache, " \
-        "reducing swelling, and reducing a fever. Taken daily, aspirin can lower the risk of cardiovascular events, " \
-        "such as a heart attack or stroke, in people with a high risk. Doctors may administer aspirin immediately" \
+cand3 = "People can buy aspirin over the counter without a prescription. Everyday uses include relieving headache, "
+        "reducing swelling, and reducing a fever. Taken daily, aspirin can lower the risk of cardiovascular events, "
+        "such as a heart attack or stroke, in people with a high risk. Doctors may administer aspirin immediately"
         " after a heart attack to prevent further clots and heart tissue death."
-        
+
 # add main_record
 kit.update_and_delete_main_record(record)
 
@@ -117,17 +119,39 @@ kit.replace_supporting_records([cand1, cand2, cand3])
 # performs k-means clustering on the 4 documents
 kit.get_clusters(k=2)
 
->>                                     note   cluster
-   0  Neurons (also called neurones or ...    0
-   1  A neural netwrok is a series of ...     0
-   2  Prescription aspirin is used to ...     1
-   3  People can buy aspirin over the ...     1
+>> note
+cluster
+0
+Neurons(also
+called
+neurones or ...
+0
+1
+A
+neural
+netwrok is a
+series
+of...
+0
+2
+Prescription
+aspirin is used
+to...
+1
+3
+People
+can
+buy
+aspirin
+over
+the...
+1
 ```
 
 ### More examples
 ```python
 # create kit 
-kit = EHRKit()
+kit = MedGen()
 
 # example 1: basic NLP function - get abbreviation terms
 # user-defined input text

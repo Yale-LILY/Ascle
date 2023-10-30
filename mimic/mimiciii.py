@@ -432,9 +432,9 @@ class ehr_db:
 
     def output_note_events_file_by_patients(self, directory):
         '''
-        input: file path like EHRKit/output/patients
+        input: file path like MedGen/output/patients
         return: none
-        output: Noteevents Text fields saved in EHRKit/output/patients/patient[SUBJECT_ID]/[ROW_ID].txt files
+        output: Noteevents Text fields saved in MedGen/output/patients/patient[SUBJECT_ID]/[ROW_ID].txt files
         '''
 
         #self.cur.execute('select SUBJECT_ID, count(ROW_ID) from mimic.NOTEEVENTS group by SUBJECT_ID having count(ROW_ID) > 10 limit 1')
@@ -458,13 +458,13 @@ class ehr_db:
                 with open(os.path.join(docpath, '%d.txt' %docid), 'w+') as f:
                     f.write(doctext[0][0])
                 print('patient document %d saved' %docid)
-        print('Done, please check EHRKit/Output/patients/ for files')
+        print('Done, please check MedGen/Output/patients/ for files')
 
     def output_note_events_discharge_summary(self, directory):
         '''
-        input: file path like EHRKit/output/
+        input: file path like MedGen/output/
         return: none
-        output: Noteevents Text fields saved in EHRKit/output/discharge_summary/[ROW_ID].txt files
+        output: Noteevents Text fields saved in MedGen/output/discharge_summary/[ROW_ID].txt files
         '''
 
         #self.cur.execute('select SUBJECT_ID, count(ROW_ID) from mimic.NOTEEVENTS group by SUBJECT_ID having count(ROW_ID) > 10 limit 1')
@@ -482,13 +482,13 @@ class ehr_db:
             with open(os.path.join(docpath, '%d.txt' %docid), 'w+') as f:
                 f.write(doctext)
                 print('discharge summary %d saved' %docid)
-        print('Done, please check EHRKit/output/discharge_summary for files')
+        print('Done, please check MedGen/output/discharge_summary for files')
 
     def outputAbbreviation(self, directory):
         '''
-        input: file path like EHRKit/output/
+        input: file path like MedGen/output/
         return: none
-        output: Noteevents Text files containing abbreviation “AB” in e.g. EHRKit/output/AB/194442.txt
+        output: Noteevents Text files containing abbreviation “AB” in e.g. MedGen/output/AB/194442.txt
         '''
 
 

@@ -1,11 +1,11 @@
-from EHRKit import EHRKit
+from MedGen import MedGen
 import pprint
 
 if __name__ == '__main__':
-    print("Welcome to LILY-EHRKit. Here's a complete run-through of all EHRKit text processing functions.")
+    print("Welcome to LILY-MedGen. Here's a complete run-through of all MedGen text processing functions.")
 
-    # initialize EHRKit object
-    kit = EHRKit()
+    # initialize MedGen object
+    kit = MedGen()
 
     print("========== Start of SciSpacy Functions ==========")
 

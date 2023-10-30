@@ -13,10 +13,10 @@ from stanza_functions import (
     get_dependency_stanza_biomed
 )
 
-class EHRKit:
+class MedGen:
     """
-    EHRKit is the main class of this toolkit. An EHRKit object stores textual records and default models for various tasks.
-    Different tasks can be called from an EHRKit object to perform tasks on the stored textual records.
+    MedGen is the main class of this toolkit. An MedGen object stores textual records and default models for various tasks.
+    Different tasks can be called from an MedGen object to perform tasks on the stored textual records.
 
     Args:
         main_record (str): main textual record
