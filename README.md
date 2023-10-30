@@ -55,8 +55,8 @@ git clone https://github.com/Yale-LILY/MedGen.git
 
 ```
 cd MedGen
-python3 -m venv ehrvir/
-source ehrvir/bin/activate
+python3 -m venv medgenvir/
+source medgenvir/bin/activate
 pip install -r requirements.txt
 ```
 
