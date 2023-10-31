@@ -167,5 +167,6 @@ Especially in the memory of Prof. Dragomir Radev, who has dedicated so much to t
 
 ## Contact
 We will continue to maintain and update this repository. If you have any questions, feel free to contact us. <br/>
-Prof. Irene Li: ireneli@ds.itc.u-tokyo.ac.jp <br/>
 Rui Yang: yang_rui@u.nus.edu
+Dr. Irene Li: ireneli@ds.itc.u-tokyo.ac.jp <br/>
+
