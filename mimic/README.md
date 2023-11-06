@@ -1,22 +1,4 @@
-# EHRKit Documentation
-## Directory Structure
-* EHRKit
-  * mimiciii.py: main definition
-  * solr_lib.py: not in use in this version
-  * classes.py: main definition
-  * external functions
-    * icd9
-      * status: incorporated but doesn't seem useful
-    * patient2vec
-      * status: not yet incorporated
-      * could be useful:
-    * phrase-at-scale
-      * status: incorporated, but only a crude version
-      * problem: does not return the phrases but outputs it to files
-  * build_db.sql
-    * The mysql scripts for building local mimic db. 
-  * tests
-    * `python tests.py` to run some testing.
+# MedGen - Query and Search, Support for MIMIC-III
 
 ## Quick Start
 ### Data Preperation
