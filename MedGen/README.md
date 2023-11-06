@@ -4,55 +4,15 @@
 [![Python 3.8.8](https://img.shields.io/badge/python-3.8.8-green.svg)](https://www.python.org/downloads/release/python-380/)
 [![Python 3.8.16](https://img.shields.io/badge/python-3.8.16-green.svg)](https://www.python.org/downloads/release/python-380/)
 
-
-## Overview
-We integrate various text-processing tools, with a focus on the medical domain, into one single, user-friendly toolkit.
-
-## Installation
-### Create virtual environment
-
-```bash
-python3 -m venv virtenv/ 
-source virtenv/bin/activate
-```
-### Install packages
-```bash
-pip install pip==21.3.1
-pip install -U spacy
-pip install scispacy
-pip install https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.4.0/en_core_sci_sm-0.4.0.tar.gz
-pip install pandas==1.1.5
-pip install numpy==1.19.5
-pip install transformers==4.12.3
-pip install torch==1.10.0
-pip install torchvision==0.11.1
-pip install sentencepiece==0.1.96
-pip install sklearn
-pip install PyRuSH
-pip install stanza==1.3.0
-pip install ipywidgets
-pip install ipykernel
-pip install summa==1.2.0
-pip install negspacy==1.0.2
-pip install medspacy==0.2.0.0
-wget https://github.com/jianlins/PyRuSH/raw/master/conf/rush_rules.tsv -P conf
-```
-
-Or using `requirements.txt`:
-
-```bash
-pip install -r requirements.txt
-```
-
 ## Quick Start
-Here, we show examples of runnng a single-document task and a multi-document task. 
+Here, we show examples of running a single-document task and a multi-document task. 
 
-For a complete run-through of all tasks, run the demo script by using ```python demo.py```. 
+For a complete run-through of all tasks, run the demo script using ```python demo.py```. 
 
 For a comprehensive tutorial, check the [tutorial notebook](https://github.com/karenacorn99/LILY-EHRKit/blob/main/EHRKit_tutorials.ipynb).
 
 ### Single-document Task Example
-Single document tasks operates on a single free-text record.
+Single document tasks operate on a single free-text record.
 
 ```python
 from MedGen import MedGen
