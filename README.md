@@ -62,9 +62,14 @@ cd MedGen
 python3 -m venv medgenvir/
 source medgenvir/bin/activate
 pip install -r requirements.txt
+```
+
+NOTE: there is a chance that your Python version is not compatible with scispacy, so you can install with the following command:
+```
 pip install scispacy
 pip install https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.0/en_core_sci_sm-0.5.0.tar.gz
 ```
+Then you are good to go!
 
 ### MedGen Demo
 We provide various generative functions and basic NLP functions. A quick start is to run the demo.py:
