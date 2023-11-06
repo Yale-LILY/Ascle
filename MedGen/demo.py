@@ -5,7 +5,7 @@ if __name__ == '__main__':
     print("Welcome to LILY-MedGen. Here's a complete run-through of all MedGen text processing functions.")
 
     # initialize MedGen object
-    kit = MedGen()
+    med = MedGen()
 
     print("========== Start of SciSpacy Functions ==========")
 
@@ -14,8 +14,8 @@ if __name__ == '__main__':
 
     record = "The patient presented with SOB (shortness of breath) and tachycardia, indicating possible COVID-19 infection."
 
-    kit.update_and_delete_main_record(record)
-    print(kit.get_abbreviations())
+    med.update_and_delete_main_record(record)
+    print(med.get_abbreviations())
 
 
     print('\n\n')
@@ -23,8 +23,8 @@ if __name__ == '__main__':
 
     record = "Keystone plant species such as fig trees are good for the soil."
 
-    kit.update_and_delete_main_record(record)
-    print(kit.get_hyponyms())
+    med.update_and_delete_main_record(record)
+    print(med.get_hyponyms())
 
    
     print('\n\n')
@@ -35,8 +35,8 @@ if __name__ == '__main__':
              "of a polyglutamine tract within the androgen receptor (AR)." \
              "SBMA can be caused by this easily."
 
-    kit.update_and_delete_main_record(record)
-    print(kit.get_linked_entities())
+    med.update_and_delete_main_record(record)
+    print(med.get_linked_entities())
 
     print('\n\n')
     print('Named entities')
@@ -49,8 +49,8 @@ if __name__ == '__main__':
              carcinoma (HCC).
              """
 
-    kit.update_and_delete_main_record(record)
-    print(kit.get_named_entities())
+    med.update_and_delete_main_record(record)
+    print(med.get_named_entities())
 
     print('\n\n')
     print('POS Tagging')
@@ -63,8 +63,8 @@ if __name__ == '__main__':
              carcinoma (HCC).
              """
 
-    kit.update_and_delete_main_record(record)
-    print(kit.get_pos_tagging(model_name="en_core_sci_sm")) 
+    med.update_and_delete_main_record(record)
+    print(med.get_pos_tagging(model_name="en_core_sci_sm")) 
 
     print("========== End of SciSpacy Functions ==========")
     print('\n\n')
@@ -81,8 +81,8 @@ if __name__ == '__main__':
              "although it’s not really known)."
 
 
-    kit.update_and_delete_main_record(record)
-    print(kit.get_translation('French'))
+    med.update_and_delete_main_record(record)
+    print(med.get_translation('French'))
 
     print("========== End of Translation ==========")
 
@@ -96,16 +96,16 @@ if __name__ == '__main__':
              " interact closely with other cell types, broadly classified as glia (these may actually outnumber neurons, " \
              "although it’s not really known)."
 
-    kit.update_and_delete_main_record(record)
+    med.update_and_delete_main_record(record)
 
     print('Using stanza')
-    print(kit.get_sentences('stanza'))
+    print(med.get_sentences('stanza'))
 
     # print('Using PyRush')
-    # print(kit.get_sentences('pyrush'))
+    # print(med.get_sentences('pyrush'))
 
     print('Using SciSpacy')
-    print(kit.get_sentences('scispacy'))
+    print(med.get_sentences('scispacy'))
 
     print("========== End of Sentencizer ==========")
 
@@ -137,9 +137,9 @@ if __name__ == '__main__':
             "such as a heart attack or stroke, in people with a high risk. Doctors may administer aspirin immediately" \
             " after a heart attack to prevent further clots and heart tissue death."
 
-    kit.update_and_delete_main_record(record)
-    kit.replace_supporting_records([cand1, cand2, cand3])
-    print(kit.get_clusters())
+    med.update_and_delete_main_record(record)
+    med.replace_supporting_records([cand1, cand2, cand3])
+    print(med.get_clusters())
 
     print("========== End of Clustering ==========")
 
@@ -171,9 +171,9 @@ if __name__ == '__main__':
             "such as a heart attack or stroke, in people with a high risk. Doctors may administer aspirin immediately" \
             " after a heart attack to prevent further clots and heart tissue death."
 
-    kit.update_and_delete_main_record(record)
-    kit.replace_supporting_records([cand1, cand2, cand3])
-    print(kit.get_similar_documents(3))
+    med.update_and_delete_main_record(record)
+    med.replace_supporting_records([cand1, cand2, cand3])
+    print(med.get_similar_documents(3))
 
     print("========== End of Similar Documents ==========")
 
@@ -184,8 +184,8 @@ if __name__ == '__main__':
              "data through a process that mimics the way the human brain operates. In this sense, neural networks refer to " \
              "systems of neurons, either organic or artificial in nature."
 
-    kit.update_and_delete_main_record(record)
-    kit.get_dependency()
+    med.update_and_delete_main_record(record)
+    med.get_dependency()
 
     print("========== Start of Pretrained Model Functions ==========")
     print('')
@@ -194,8 +194,8 @@ if __name__ == '__main__':
     print('POS Tagging with Huggingface')
     import pprint
     record = 'The patient presented with a persistent cough and shortness of breath.'
-    kit.update_and_delete_main_record(record)
-    pprint.pprint(kit.get_pos_tagging_hf())
+    med.update_and_delete_main_record(record)
+    pprint.pprint(med.get_pos_tagging_hf())
 
     
     
@@ -209,13 +209,13 @@ if __name__ == '__main__':
              with different types of cancer, including hepatocellular
              carcinoma (HCC).
              """
-    kit.update_and_delete_main_record(record)
-    print(kit.get_question())
+    med.update_and_delete_main_record(record)
+    print(med.get_question())
 
 
     print('\n\n')
     print("Translations")
-    print(kit.get_translation_mt5('French'))
+    print(med.get_translation_mt5('French'))
 
     print('\n\n')
     print("Question and Answering: choose from 5 candidates")
@@ -227,27 +227,27 @@ if __name__ == '__main__':
                "They spread long distances.",
                "They present a refractory period."]
     num_labels = 5
-    kit.update_and_delete_main_record(question)
-    print("The answer is: ", kit.get_choice(text, question, choices, num_labels))
+    med.update_and_delete_main_record(question)
+    print("The answer is: ", med.get_choice(text, question, choices, num_labels))
 
     print('\n\n')
     print("Question and Answering: ")
     question = 'Question: What are the common symptoms of the flu?'
     content = 'Content: Influenza, commonly known as the flu, is a viral respiratory illness. It is characterized by symptoms such as fever, cough, sore throat, runny or stuffy nose, body aches, fatigue, and headaches.'
-    kit.update_and_delete_main_record(question)
-    print(kit.get_span_answer(content))
+    med.update_and_delete_main_record(question)
+    print(med.get_span_answer(content))
 
     print('\n\n')
     print("Translate to Layman language: ")
     content = 'The patient presents with symptoms of acute bronchitis, including cough, chest congestion, and mild fever. Auscultation reveals coarse breath sounds and occasional wheezing. Based on the clinical examination, a diagnosis of acute bronchitis is made, and the patient is prescribed a short course of bronchodilators and advised to rest and stay hydrated.'
     layman_model = "ireneli1024/bart-large-elife-finetuned"
-    kit.update_and_delete_main_record(content)
-    print(kit.get_layman_text(layman_model, min_length=20, max_length=70))
+    med.update_and_delete_main_record(content)
+    print(med.get_layman_text(layman_model, min_length=20, max_length=70))
 
 
     print('\n\n')
     print("Interactive chat, by default, this will last 5 rounds: ")
-    kit.get_dialogpt()
+    med.get_dialogpt()
 
 
 
