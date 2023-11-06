@@ -62,6 +62,8 @@ cd MedGen
 python3 -m venv medgenvir/
 source medgenvir/bin/activate
 pip install -r requirements.txt
+pip install scispacy
+pip install https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.0/en_core_sci_sm-0.5.0.tar.gz
 ```
 
 ### MedGen Demo
