@@ -12,7 +12,7 @@ if __name__ == '__main__':
     print('\n\n')
     print('Abbreviations')
 
-    record = "The patient presented with SOB (shortness of breath) and tachycardia, indicating possible COVID-19 infection."
+    record =  "Rift Valley Fever Virus (RVFV) is an emerging zoonotic pathogen transmitted to humans and livestock through mosquito bites, which was first isolated in Kenya in 1930. The virus is classified by the WHO among the pathogens for which there is an urgent need to develop research, diagnostics, and therapies. However, the efforts developed to control the virus remain limited, and the virus is not well characterized. In this article, we will introduce RVFV and then focus on its virulence factor, the nonstructural protein NSs. We will mainly discuss the ability of this viral protein to form amyloid-like fibrils and its implication in the neurotoxicity associated with RVFV infection."
 
     med.update_and_delete_main_record(record)
     print(med.get_abbreviations())
