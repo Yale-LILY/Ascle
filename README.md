@@ -62,8 +62,6 @@ cd MedGen
 python3 -m venv medgenvir/
 source medgenvir/bin/activate
 pip install -r requirements.txt
-pip install -U spacy
-python -m spacy download en_core_sci_sm
 ```
 
 ### MedGen Demo
