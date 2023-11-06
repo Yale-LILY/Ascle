@@ -1,16 +1,21 @@
 # MedGen - Query and Search, Support for MIMIC-III
 
 ## Quick Start
-### Data Preperation
-[Mysql](https://www.mysql.com) is need to run these functions. Please make sure it is running, and you know the username and password. You will need them later. 
+### Preparation
+[Mysql](https://www.mysql.com) is needed to run these functions. Please make sure it is running, and you know the username and password. You will need them later. Install the pymysql package first:
+```python
+pip install pymysql
+```
 
 Once you download the [mimic-iii](https://physionet.org/content/mimiciii/) data, you will get a list of `.csv` files, we provide the `build_db.sql` to build the database from these csv files, run the following:
 
 ```mysql -u <username>> -p -h "localhost" mimiciiiv14 < build_db.sql ```
 
-In the `build_db.sql`, make sure the data file paths are correct. Importing may take some time, after this step, you will see the `mimiciiiv14` database is built. Then you are feel to run the tests. 
+In the `build_db.sql`, make sure the data file paths are correct. Importing may take some time; after this step, you will see the `mimiciiiv14` database is built. Then you are good to run the tests. One option is to copy the `build_db.sql` into the mimic data path and run the command in the same directory. This may take a few minutes. 
 
 ### Simple Tests
+
+Change your USERNAME and PASSWORD in the code before you do the test. 
 
 ```python
 import mimiciii
