@@ -4,7 +4,7 @@
 [![Python 3.8.8](https://img.shields.io/badge/python-3.8.8-green.svg)](https://www.python.org/downloads/release/python-380/)
 [![Python 3.8.16](https://img.shields.io/badge/python-3.8.16-green.svg)](https://www.python.org/downloads/release/python-380/)
 
-## Quick Start
+## More examples
 Here, we show examples of running a single-document task and a multi-document task. 
 
 For a complete run-through of all tasks, run the demo script using ```python demo.py```. 
