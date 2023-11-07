@@ -8,6 +8,7 @@
 [![Python 3.6.13](https://img.shields.io/badge/python-3.6.13-green.svg)](https://www.python.org/downloads/release/python-360/)
 [![Python 3.8.13](https://img.shields.io/badge/python-3.8.13-green.svg)](https://www.python.org/downloads/release/python-380/)
 [![Python 3.8.16](https://img.shields.io/badge/python-3.8.16-green.svg)](https://www.python.org/downloads/release/python-380/)
+[![Python 3.10.12](https://img.shields.io/badge/python-3.10.12-green.svg)](https://www.python.org/downloads/release/python-3100/)
 
 We introduce MedGen, a comprehensive natural language processing (NLP) toolkit designed specifically for medical text processing. MedGen is tailored for biomedical researchers and healthcare professionals, providing them with an easy-to-use, all-in-one solution that requires minimal programming expertise. 
 
