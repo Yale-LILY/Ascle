@@ -157,7 +157,7 @@ Please create a GitHub issue if you have any questions, suggestions, requests or
 This project started at the year of 2018. There are many people participated and made contributions:
 
 Rui Yang*, Qingcheng Zeng*, Keen You*, Yujie Qiao*, Lucas Huang, Chia-Chun Hsieh, Benjamin Rosand, <br> Jeremy Goldwasser, Amisha D Dave, Tiarnan D.L. Keenan, 
-Emily Y Chew, Dragomir Radev, Zhiyong Lu, Hua Xu, <br> Qingyu Chen, Irene Li
+Emily Y Chew, Dragomir Radev, Zhiyong Lu, <br> Hua Xu, Qingyu Chen, Irene Li
 
 Especially in the memory of Prof. Dragomir Radev, who has dedicated so much to this project.
 
