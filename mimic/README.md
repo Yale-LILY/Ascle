@@ -1,4 +1,4 @@
-# MedGen - Query and Search, Support for MIMIC-III
+# Ascle - Query and Search, Support for MIMIC-III
 
 ## Quick Start
 ### Preparation
