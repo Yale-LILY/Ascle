@@ -3,21 +3,21 @@
 </p>
 
 
-# MedGen: A Python Natural Language Processing Toolkit for Medical Text Processing
+# Ascle: A Python Natural Language Processing Toolkit for Medical Text Processing
 
 [![Python 3.6.13](https://img.shields.io/badge/python-3.6.13-green.svg)](https://www.python.org/downloads/release/python-360/)
 [![Python 3.8.13](https://img.shields.io/badge/python-3.8.13-green.svg)](https://www.python.org/downloads/release/python-380/)
 [![Python 3.8.16](https://img.shields.io/badge/python-3.8.16-green.svg)](https://www.python.org/downloads/release/python-380/)
 [![Python 3.10.12](https://img.shields.io/badge/python-3.10.12-green.svg)](https://www.python.org/downloads/release/python-3100/)
 
-We introduce MedGen, a comprehensive natural language processing (NLP) toolkit designed specifically for medical text processing. MedGen is tailored for biomedical researchers and healthcare professionals, providing them with an easy-to-use, all-in-one solution that requires minimal programming expertise. 
+We introduce Ascle, a comprehensive natural language processing (NLP) toolkit designed specifically for medical text processing. Ascle is tailored for biomedical researchers and healthcare professionals, providing them with an easy-to-use, all-in-one solution that requires minimal programming expertise. 
 
-### Framework of MedGen 
-(1) Generative Functions: For the first time, MedGen includes four advanced and challenging  generative functions: question answering, text summarization, text simplification, and machine translation; 
+### Framework of Ascle 
+(1) Generative Functions: For the first time, Ascle includes four advanced and challenging  generative functions: question answering, text summarization, text simplification, and machine translation; 
 
-(2) Basic NLP Functions: MedGen consists of 12 essential NLP functions such as word tokenization and sentence segmentation; 
+(2) Basic NLP Functions: Ascle consists of 12 essential NLP functions such as word tokenization and sentence segmentation; 
 
-(3) Query and Search Capabilities: MedGen provides user-friendly query and search functions on text corpora.
+(3) Query and Search Capabilities: Ascle provides user-friendly query and search functions on text corpora.
 
 <p align="center">
    <img src="MedGen.jpg">
@@ -34,7 +34,7 @@ We introduce MedGen, a comprehensive natural language processing (NLP) toolkit d
 * [Contact](#contact)
 
 ## Updates
-_28_10_2023_ - New Release v2.1: we changed the toolkit name to MedGen from EHRKit, easier to use! <br/>
+_28_10_2023_ - New Release v2.1: we changed the toolkit name to Ascle from EHRKit, easier to use! <br/>
 _10_07_2023_ - New Release v2.0: a large re-organization and improvement from v1.0. <br/>
 _24_05_2023_ - New Release Pretrained Models for Machine Translation. <br/>
 _15_03_2022_ - Merged the ehrkit folder to support off-shelf medical text processing. <br/>
@@ -50,18 +50,18 @@ _20_04_2021_ - Spring functionality finished -- mimic classification, summarizat
 
 ### Download Repository
 
-You can download MedGeb as a git repository; simply clone to your choice of directories (keep depth small to keep the old versions out and reduce size).
+You can download Ascle as a git repository; simply clone to your choice of directories (keep depth small to keep the old versions out and reduce size).
 
 ```
-git clone https://github.com/Yale-LILY/MedGen.git
+git clone https://github.com/Yale-LILY/Ascle.git
 ```
 
 ### Environment
 
 ```
-cd MedGen
-python3 -m venv medgenvir/
-source medgenvir/bin/activate
+cd Ascle
+python3 -m venv asclevir/
+source asclevir/bin/activate
 pip install -r requirements.txt
 ```
 
@@ -72,21 +72,21 @@ pip install https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.0/e
 ```
 Then you are good to go!
 
-### MedGen Demo
+### Ascle Demo
 We provide various generative functions and basic NLP functions. A quick start is to run the demo.py:
 
 ```
-cd MedGen
+cd Ascle
 python demo.py
 ```
 Note: this may take some time, as some packages will be downloaded. 
 
 #### Text Simplification
 ```python
-from MedGen import MedGen
+from Ascle import Ascle
 
-# create MedGen 
-med = MedGen()
+# create Ascle 
+med = Ascle()
 
 # Text Simplification
 main_record = """
@@ -139,7 +139,7 @@ print(med.get_translation_mt5("French"))
 ```
 
 ## Fine-tuned Models
-In MedGen, users can access any publicly available language model. Additionally, we provide users with 32 of our fine-tuned models which are suitable for multiple-choice QA, text simplification, and machine translation tasks.
+In Ascle, users can access any publicly available language model. Additionally, we provide users with 32 of our fine-tuned models which are suitable for multiple-choice QA, text simplification, and machine translation tasks.
 
 Plase feel to download our fine-tuned models: 
 * [Multi-choice QA](https://huggingface.co/RUI525) 
