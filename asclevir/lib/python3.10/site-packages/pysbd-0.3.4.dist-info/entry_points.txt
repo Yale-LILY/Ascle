@@ -1,3 +1,0 @@
-[spacy_factories]
-pysbd = pysbd.utils:PySBDFactory
-
