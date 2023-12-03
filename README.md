@@ -81,13 +81,16 @@ python demo.py
 ```
 Note: this may take some time, as some packages will be downloaded. 
 
-#### Text Simplification
+#### Load Ascle
 ```python
 from Ascle import Ascle
 
 # create Ascle 
 med = Ascle()
+```
 
+#### Text Simplification
+```python
 # Text Simplification
 main_record = """
               The patient presents with symptoms of acute bronchitis,
