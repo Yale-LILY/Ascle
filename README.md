@@ -3,7 +3,7 @@
 </p>
 
 
-# Ascle: A Python Natural Language Processing Toolkit for Medical Text Processing
+# Ascle: A Python Natural Language Processing Toolkit for Medical Text Generation
 
 [![Python 3.6.13](https://img.shields.io/badge/python-3.6.13-green.svg)](https://www.python.org/downloads/release/python-360/)
 [![Python 3.8.13](https://img.shields.io/badge/python-3.8.13-green.svg)](https://www.python.org/downloads/release/python-380/)
