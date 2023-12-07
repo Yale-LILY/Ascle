@@ -20,7 +20,7 @@ We introduce Ascle, a comprehensive natural language processing (NLP) toolkit de
 (3) Query and Search Capabilities: Ascle provides user-friendly query and search functions on text corpora.
 
 <p align="center">
-   <img src="Ascle.jpg">
+   <img src="Ascle.png">
 </p>
 <p align="center">⚙️indicates that we have our fine-tuned models for this particular task. <br> ⭐️indicates that we conducted evaluations for this particular task.</p>
 
