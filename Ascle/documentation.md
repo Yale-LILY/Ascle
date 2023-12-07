@@ -1,9 +1,12 @@
 
  # 📔 Documentation
 
-<img src="Ascle_logo.png"> 
+<p align="center">
+   <img src="Ascle_logo.png">
+</p>
 
-A pioneering natural language processing (NLP) toolkit designed for medical text generation.
+**A pioneering natural language processing (NLP) toolkit designed for medical text generation.**
+
 ## Key Modules and Functions
 
 ### ✨multi_doc_functions.py 
