@@ -1,7 +1,7 @@
 
  # 📔 Documentation
 
-<img src="Ascle_logo.png" alt="drawing" width="1000"/> 
+<img src="Ascle_logo.png"> 
 
 A pioneering natural language processing (NLP) toolkit designed for medical text generation.
 ## Key Modules and Functions
