@@ -1,7 +1,7 @@
 
  # 📔 Documentation
 
-<img src="https://github.com/Yale-LILY/Ascle/blob/v2.1/Ascle_logo.png" alt="drawing" width="1000"/> 
+<img src="Ascle_logo.png" alt="drawing" width="1000"/> 
 
 A comprehensive natural language processing (NLP) toolkit designed specifically for medical text processing.
 ## Key Modules and Functions
