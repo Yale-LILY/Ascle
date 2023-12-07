@@ -13,11 +13,14 @@
 We introduce Ascle, a pioneering natural language processing (NLP) toolkit designed for medical text generation. Ascle is tailored for biomedical researchers and healthcare professionals with an easy-to-use, all-in-one solution that requires minimal programming expertise.
 
 ### Framework of Ascle 
-(1) Generative Functions: For the first time, Ascle includes four advanced and challenging  generative functions: question answering, text summarization, text simplification, and machine translation; 
 
-(2) Basic NLP Functions: Ascle consists of 12 essential NLP functions such as word tokenization and sentence segmentation; 
+Ascle consists of three modules.
 
-(3) Query and Search Capabilities: Ascle provides user-friendly query and search functions on text corpora.
+🌟 Generative Functions: The core module of Ascle. For the first time, Ascle includes four advanced and challenging  generative functions: question-answering, text summarization, text simplification, and machine translation; 
+
+Basic NLP Functions: Ascle consists of 12 essential NLP functions such as word tokenization and sentence segmentation; 
+
+Query and Search Capabilities: Ascle provides user-friendly query and search functions on clinical databases.
 
 <p align="center">
    <img src="Ascle.png">
@@ -34,7 +37,7 @@ We introduce Ascle, a pioneering natural language processing (NLP) toolkit desig
 * [Contact](#contact)
 
 ## Updates
-_28_10_2023_ - New Release v2.1: we changed the toolkit name to Ascle from EHRKit, easier to use! <br/>
+_07_11_2023_ - New Release v2.2: we changed the toolkit name to Ascle from EHRKit, easier to use! <br/>
 _10_07_2023_ - New Release v2.0: a large re-organization and improvement from v1.0. <br/>
 _24_05_2023_ - New Release Pretrained Models for Machine Translation. <br/>
 _15_03_2022_ - Merged the ehrkit folder to support off-shelf medical text processing. <br/>
