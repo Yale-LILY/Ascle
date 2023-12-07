@@ -5,7 +5,7 @@
    <img src="Ascle_logo.png">
 </p>
 
-**A pioneering natural language processing (NLP) toolkit designed for medical text generation.**
+# A pioneering natural language processing (NLP) toolkit designed for medical text generation.
 
 ## Key Modules and Functions
 
