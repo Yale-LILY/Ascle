@@ -18,7 +18,7 @@ Ascle consists of three modules:
 
 🌟 **Generative Functions**: For the first time, Ascle includes four advanced and challenging generative functions: question-answering, text summarization, text simplification, and machine translation; 
 
-**Basic NLP Functio**: Ascle consists of 12 essential NLP functions such as word tokenization and sentence segmentation; 
+**Basic NLP Functions**: Ascle consists of 12 essential NLP functions such as word tokenization and sentence segmentation; 
 
 **Query and Search Capabilities**: Ascle provides user-friendly query and search functions on clinical databases.
 
