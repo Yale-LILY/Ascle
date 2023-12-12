@@ -168,14 +168,13 @@ Especially in the memory of Prof. Dragomir Radev, who has dedicated so much to t
 
 ## Citation
 ```bibtext
-@misc{yang2023medgen,
-      title={MedGen: A Python Natural Language Processing Toolkit for Medical Text Processing}, 
+@misc{yang2023ascle,
+      title={Ascle: A Python Natural Language Processing Toolkit for Medical Text Generation}, 
       author={Rui Yang and Qingcheng Zeng and Keen You and Yujie Qiao and Lucas Huang and Chia-Chun Hsieh and Benjamin Rosand and Jeremy Goldwasser and Amisha D Dave and Tiarnan D. L. Keenan and Emily Y Chew and Dragomir Radev and Zhiyong Lu and Hua Xu and Qingyu Chen and Irene Li},
       year={2023},
       eprint={2311.16588},
       archivePrefix={arXiv},
       primaryClass={cs.CL}
-}
 }
 ```
 
