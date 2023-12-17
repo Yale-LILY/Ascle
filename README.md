@@ -166,8 +166,10 @@ Rui Yang*, Qingcheng Zeng*, Keen You*, Yujie Qiao*, Lucas Huang, Chia-Chun Hsieh
 
 Especially in the memory of Prof. Dragomir Radev, who has dedicated so much to this project.
 
+## Paper
+Please find our paper at https://arxiv.org/abs/2311.16588.
+
 ## Citation
-Our [Paper:](https://arxiv.org/abs/2311.16588)
 ```bibtext
 @misc{yang2023ascle,
       title={Ascle: A Python Natural Language Processing Toolkit for Medical Text Generation}, 
