@@ -3,7 +3,7 @@ from langchain.chains import ConversationChain
 from langchain.chat_models import ChatOpenAI
 from langchain.memory import ConversationBufferWindowMemory
 from typing import List, Dict, Any
-from umls_rerank_cohere import get_umls_keys
+from umls_rerank import get_umls_keys
 from tqdm import tqdm
 import pandas as pd
 
