@@ -194,4 +194,5 @@ class Ascle:
     
     def get_pos_tagging_hf(self,model_name="flair/pos-english"):
         return get_pos_tagging_hf(self.main_record,model_name)
+
                         
