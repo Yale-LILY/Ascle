@@ -9,7 +9,7 @@ Here, we show examples of running a single-document task and a multi-document ta
 
 For a complete run-through of all tasks, run the demo script using ```python demo.py```. 
 
-For a comprehensive tutorial, check the [tutorial notebook](https://github.com/karenacorn99/LILY-EHRKit/blob/main/EHRKit_tutorials.ipynb).
+For a comprehensive tutorial, check the [tutorial notebook](https://github.com/Yale-LILY/Ascle/blob/v2.2/Ascle/Ascle_tutorials.ipynb).
 
 ### Single-document Task Example
 Single document tasks operate on a single free-text record.
