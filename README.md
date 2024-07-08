@@ -1,4 +1,4 @@
-<p align="center">
+![image](https://github.com/Yale-LILY/Ascle/assets/11585259/b3d31e0c-81b6-4187-aa9c-44054994e00e)<p align="center">
    <img src="Ascle_logo.png">
 </p>
 
@@ -148,11 +148,42 @@ print(med.get_translation_mt5("French"))
 ## Fine-tuned Models
 In Ascle, users can access any publicly available language model. Additionally, we provide users with 32 of our fine-tuned models which are suitable for multiple-choice QA, text simplification, and machine translation tasks.
 
-Plase feel to download our fine-tuned models: 
-* [Multi-choice QA](https://huggingface.co/RUI525) 
-* [Text Simplification](https://huggingface.co/ireneli1024)
-* [Machine Translation (mT5)](https://huggingface.co/qcz)
-* [Machine Translation (MarianMT)](https://huggingface.co/irenelizihui)
+Please feel to download our fine-tuned models: 
+
+| Tasks                | Base Model      | Fine-Tuned Data       | Huggingface Link |
+|----------------------|-----------------|-----------------------|----------|
+| Multi-choice QA      | BioBERT         | HEADQA                | [Download](https://huggingface.co/li-lab/ascle-BioBERT-finetune-HEADQA) |
+|                      | ClinicalBERT    | HEADQA                | [Download](https://huggingface.co/li-lab/ascle-ClinicalBERT-finetune-HEADQA) |
+|                      | SapBERT         | HEADQA                | [Download](https://huggingface.co/li-lab/ascle-SapBERT-finetune-HEADQA) |
+|                      | PubMedBERT      | HEADQA                | [Download](https://huggingface.co/li-lab/ascle-PubMedBERT-finetune-HEADQA) |
+|                      | GatorTron       | HEADQA                | [Download](https://huggingface.co/li-lab/ascle-GatorTron-finetune-HEADQA) |
+|                      | BioBERT         | MedMCQA-w-context     | [Download](https://huggingface.co/li-lab/ascle-BioBERT-finetune-MedMCQA-w-context) |
+|                      | ClinicalBERT    | MedMCQA-w-context     | [Download](https://huggingface.co/li-lab/ascle-ClinicalBERT-finetune-MedMCQA-w-context) |
+|                      | SapBERT         | MedMCQA-w-context     | [Download](https://huggingface.co/li-lab/ascle-SapBERT-finetune-MedMCQA-w-context) |
+|                      | PubMedBERT      | MedMCQA-w-context     | [Download](https://huggingface.co/li-lab/ascle-PubMedBERT-finetune-MedMCQA-w-context) |
+|                      | GatorTron       | MedMCQA-w-context     | [Download](https://huggingface.co/li-lab/ascle-GatorTron-finetune-MedMCQA-w-context) |
+|                      | BioBERT         | MedMCQA-wo-context    | [Download](https://huggingface.co/li-lab/ascle-BioBERT-finetune-MedMCQA-wo-context) |
+|                      | ClinicalBERT    | MedMCQA-wo-context    | [Download](https://huggingface.co/li-lab/ascle-ClinicalBERT-finetune-MedMCQA-wo-context) |
+|                      | SapBERT         | MedMCQA-wo-context    | [Download](https://huggingface.co/li-lab/ascle-SapBERT-finetune-MedMCQA-wo-context) |
+|                      | PubMedBERT      | MedMCQA-wo-context    | [Download](https://huggingface.co/li-lab/ascle-PubMedBERT-finetune-MedMCQA-wo-context) |
+|                      | GatorTron       | MedMCQA-wo-context    | [Download](https://huggingface.co/li-lab/ascle-GatorTron-finetune-MedMCQA-wo-context) |
+| Text Simplification  | BART            | eLife                 | [Download](https://huggingface.co/li-lab/ascle-bart-large-elife-finetuned) |
+|                      | BioBART         | eLife                 | [Download](https://huggingface.co/li-lab/ascle-biobart-v2-base-elife-finetuned) |
+|                      | BigBirdPegasus  | eLife                 | [Download](https://huggingface.co/li-lab/ascle-bigbird-pegasus-large-pubmed-elife-finetuned) |
+|                      | BART            | PLOS                  | [Download](https://huggingface.co/li-lab/ascle-bart-large-PLOS-finetuned) |
+|                      | BioBART         | PLOS                  | [Download](https://huggingface.co/li-lab/ascle-biobart-v2-base-plos-finetuned) |
+|                      | BigBirdPegasus  | PLOS                  | [Download](https://huggingface.co/li-lab/ascle-bigbird-pegasus-large-pubmed-plos-finetuned) |
+| Machine Translation  | mT5             | UFAL (en_es)          | [Download](https://huggingface.co/li-lab/ascle-en-es-UFAL-medical) |
+|                      | mT5             | UFAL (en_fr)          | [Download](https://huggingface.co/li-lab/ascle-en-fr-UFAL-medical) |
+|                      | mT5             | UFAL (en_ro)          | [Download](https://huggingface.co/li-lab/ascle-en-ro-UFAL-medical) |
+|                      | mT5             | UFAL (en_cs)          | [Download](https://huggingface.co/li-lab/ascle-en-cs-UFAL-medical) |
+|                      | mT5             | UFAL (en_de)          | [Download](https://huggingface.co/li-lab/ascle-en-de-UFAL-medical) |
+|                      | mT5             | UFAL (en_hu)          | [Download](https://huggingface.co/li-lab/ascle-en-hu-UFAL-medical) |
+|                      | mT5             | UFAL (en_pl)          | [Download](https://huggingface.co/li-lab/ascle-en-pl-UFAL-medical) |
+|                      | mT5             | UFAL (en_sv)          | [Download](https://huggingface.co/li-lab/ascle-en-sv-UFAL-medical) |
+|                      | MarianMT        | UFAL (en_es)          | [Download](https://huggingface.co/li-lab/ascle-en-es-UFAL-MarianMT) |
+|                      | MarianMT        | UFAL (en_fr)          | [Download](https://huggingface.co/li-lab/ascle-en-fr-UFAL-MarianMT) |
+|                      | MarianMT        | UFAL (en_ro)          | [Download](https://huggingface.co/li-lab/ascle-en-ro-UFAL-MarianMT) |
 
 
 ## Get involved
