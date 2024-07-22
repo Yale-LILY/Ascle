@@ -10,7 +10,9 @@
 [![Python 3.8.16](https://img.shields.io/badge/python-3.8.16-green.svg)](https://www.python.org/downloads/release/python-380/)
 [![Python 3.10.12](https://img.shields.io/badge/python-3.10.12-green.svg)](https://www.python.org/downloads/release/python-3100/)
 
-We introduce Ascle, a pioneering natural language processing (NLP) toolkit designed for medical text generation. Ascle is tailored for biomedical researchers and healthcare professionals with an easy-to-use, all-in-one solution that requires minimal programming expertise.
+We introduce Ascle, a pioneering natural language processing (NLP) toolkit designed for medical text generation. Ascle is tailored for biomedical researchers and healthcare professionals with an easy-to-use, all-in-one solution that requires minimal programming expertise.  
+
+This work,  [Ascle: A Python Natural Language Processing Toolkit for Medical Text Generation](https://arxiv.org/abs/2311.16588),  has been accepted by JMIR recently! 
 
 ### Framework of Ascle 
 
