@@ -39,7 +39,7 @@ Ascle consists of three modules:
 * [Contact](#contact)
 
 ## Updates
-_29_07_2024_ - We uploaded a new folder, `Ascle-JPBench`, containing open-sourced EN-JP medical task data examples. Ascle-JPBench will support comprehensive tasks such as QA, NLI, and multiple choice.
+_29_07_2024_ - We uploaded a new folder, `Ascle-JPBench`, containing open-sourced EN-JP medical task data examples. Ascle-JPBench will support comprehensive tasks such as QA, NLI, and multiple choice. <br/>
 _17_05_2024_ - We are currently updating Ascle. In the next version, Ascle will include the question-answering task based on the RAG framework and will support multiple languages for all tasks. <br/>
 _07_11_2023_ - New Release v2.2: we changed the toolkit name to Ascle from EHRKit, easier to use! <br/>
 _10_07_2023_ - New Release v2.0: a large re-organization and improvement from v1.0. <br/>
