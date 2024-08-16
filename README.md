@@ -200,7 +200,7 @@ This project started at the year of 2018. There are many people participated and
 Rui Yang*, Qingcheng Zeng*, Keen You*, Yujie Qiao*, Lucas Huang, Chia-Chun Hsieh, Benjamin Rosand, Jeremy Goldwasser, Amisha D Dave, Tiarnan D.L. Keenan, Emily Y Chew, Dragomir Radev, Zhiyong Lu, Hua Xu, Qingyu Chen, Irene Li
 
 
-Our sincere gratitude also goes to Dr.Edison Marrese-Taylor and Prof.Yutaka Matsuo from the University of Tokyo, for their invaluable guidance and support throughout this project.
+Our sincere gratitude also goes to Dr.Edison Marrese-Taylor and Prof. Yutaka Matsuo from the University of Tokyo, for their invaluable guidance and support throughout this project.
 
 🕯️ Especially in the memory of Prof. Dragomir Radev, who has dedicated so much to this project.
 
