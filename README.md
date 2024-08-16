@@ -194,12 +194,15 @@ Please feel to download our fine-tuned models:
 Please create a GitHub issue if you have any questions, suggestions, requests or bug-reports. We welcome PRs!
 
 
-## Contributors
+## Acknowledgement 
 This project started at the year of 2018. There are many people participated and made contributions:
 
 Rui Yang*, Qingcheng Zeng*, Keen You*, Yujie Qiao*, Lucas Huang, Chia-Chun Hsieh, Benjamin Rosand, Jeremy Goldwasser, Amisha D Dave, Tiarnan D.L. Keenan, Emily Y Chew, Dragomir Radev, Zhiyong Lu, Hua Xu, Qingyu Chen, Irene Li
 
-Especially in the memory of Prof. Dragomir Radev, who has dedicated so much to this project.
+
+Our sincere gratitude also goes to Dr.Edison Marrese-Taylor and Prof.Yutaka Matsuo from the University of Tokyo, for their invaluable guidance and support throughout this project.
+
+🕯️ Especially in the memory of Prof. Dragomir Radev, who has dedicated so much to this project.
 
 ## Paper
 Please find our paper at https://arxiv.org/abs/2311.16588.
@@ -210,6 +213,7 @@ Please find our paper at https://arxiv.org/abs/2311.16588.
       title={Ascle: A Python Natural Language Processing Toolkit for Medical Text Generation}, 
       author={Rui Yang and Qingcheng Zeng and Keen You and Yujie Qiao and Lucas Huang and Chia-Chun Hsieh and Benjamin Rosand and Jeremy Goldwasser and Amisha D Dave and Tiarnan D. L. Keenan and Emily Y Chew and Dragomir Radev and Zhiyong Lu and Hua Xu and Qingyu Chen and Irene Li},
       year={2023},
+      doi={10.2196/60601},
       eprint={2311.16588},
       archivePrefix={arXiv},
       primaryClass={cs.CL}
