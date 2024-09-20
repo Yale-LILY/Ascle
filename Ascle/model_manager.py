@@ -17,7 +17,6 @@ class ModelManager:
         Parameters:
         config_file (str): Path to the configuration file containing the API keys.
         """
-        
         # Load environment variables from the .env file
         load_dotenv(config_file)
         

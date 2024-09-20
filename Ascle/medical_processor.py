@@ -26,7 +26,6 @@ class MedicalProcessor:
         self.med.update_and_delete_main_record(text)
         summary = self.med.get_layman_text(min_length=20, max_length=70)
         print(f"{Fore.CYAN}Summary:\n{summary}")
-        return summary
 
     def translate_text(self, text, target_language):
         """
@@ -38,9 +37,9 @@ class MedicalProcessor:
         """
         print(f"{Fore.CYAN}System: Translating medical text...")
         self.med.update_and_delete_main_record(text)
-        translation = self.med.get_translation_mt5(target_language,clean_up_tokenization_spaces=True)
+        translation = self.med.get_translation_mt5(target_language)
         print(f"{Fore.CYAN}Translation:\n{translation}")
-        return translation
+
     def extract_named_entities(self, text):
         """
         Extracts named entities from the provided medical text.
@@ -52,7 +51,6 @@ class MedicalProcessor:
         self.med.update_and_delete_main_record(text)
         entities = self.med.get_named_entities()
         print(f"{Fore.CYAN}Named Entities:\n{entities}")
-        return entities
 
     def extract_linked_entities(self, text):
         """
@@ -65,7 +63,6 @@ class MedicalProcessor:
         self.med.update_and_delete_main_record(text)
         linked_entities = self.med.get_linked_entities()
         print(f"{Fore.CYAN}Linked Entities:\n{linked_entities}")
-        return linked_entities
 
     def pos_tagging(self, text):
         """
@@ -78,7 +75,7 @@ class MedicalProcessor:
         self.med.update_and_delete_main_record(text)
         pos_tags = self.med.get_pos_tagging(model_name="en_core_sci_sm")
         print(f"{Fore.CYAN}POS Tags:\n{pos_tags}")
-        return pos_tags
+
     def extract_abbreviations(self, text):
         """
         Extracts abbreviations from the provided medical text.
@@ -90,7 +87,7 @@ class MedicalProcessor:
         self.med.update_and_delete_main_record(text)
         abbreviations = self.med.get_abbreviations()
         print(f"{Fore.CYAN}Abbreviations:\n{abbreviations}")
-        return abbreviations
+
     def extract_hyponyms(self, text):
         """
         Extracts hyponyms from the provided medical text.
@@ -102,7 +99,7 @@ class MedicalProcessor:
         self.med.update_and_delete_main_record(text)
         hyponyms = self.med.get_hyponyms()
         print(f"{Fore.CYAN}Hyponyms:\n{hyponyms}")
-        return hyponyms
+
     def generate_questions(self, text):
         """
         Generates questions from the provided medical text.
@@ -114,7 +111,7 @@ class MedicalProcessor:
         self.med.update_and_delete_main_record(text)
         questions = self.med.get_question()
         print(f"{Fore.CYAN}Generated Questions:\n{questions}")
-        return questions
+
     def find_similar_documents(self, query_note, candidate_notes, top_k=3):
         """
         Finds similar documents to the query_note from the list of candidate_notes.
@@ -141,4 +138,3 @@ class MedicalProcessor:
         else:
             print(f"{Fore.CYAN}Similar Documents:\n")
             print(similar_docs)
-        return similar_docs
