@@ -13,6 +13,7 @@ of a polyglutamine tract within the androgen receptor (AR). \
 SBMA can be caused by this easily."
 '''
 prompt =    """
+            Summarize this text:
             The patient presents with symptoms of acute bronchitis,
             including cough, chest congestion, and mild fever.
             Auscultation reveals coarse breath sounds and occasional 
