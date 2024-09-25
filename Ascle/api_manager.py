@@ -48,7 +48,7 @@ class APIManager:
         try:
             self.configure_gemini()
             model = genai.GenerativeModel(model_name="gemini-1.5-pro")
-            response = model.generate_content(text)
-            return response.text
+            response = model.generate_text(text)
+            return response
         except Exception as e:
             return f"Gemini API error: {str(e)}"
