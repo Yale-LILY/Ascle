@@ -29,18 +29,18 @@ class AscleInterface:
         """
         if model_type == 'Ascle':
             self.using_ascle_model = True  # Set to use ascle models
-        elif model_type in ['chatgpt', 'claude', 'gemini']:
+        elif model_type in ['chatgpt', 'claude', 'gemini', 'LLaMA']:
             self._choose_open_model(model_type)  # Set the open model based on user choice
             self.using_ascle_model = False  # Set to use external model
         else:
-            raise ValueError("Invalid choice. Please select 'chatgpt', 'claude', 'gemini', or 'ascle'.")
+            raise ValueError("Invalid choice. Please select 'chatgpt', 'claude', 'gemini', 'LLaMA', or 'ascle'.")
 
     def _choose_open_model(self, model_name):
         """
-        Set the open model to use based on the user selection (ChatGPT, Claude, or Gemini).
+        Set the open model to use based on the user selection (ChatGPT, Claude, Gemini or LLaMA).
         
         Parameters:
-        model_name (str): The selected open model ('chatgpt', 'claude', 'gemini').
+        model_name (str): The selected open model ('chatgpt', 'claude', 'gemini', 'LLaMA).
         """
         model_map = {'chatgpt': '1', 'claude': '2', 'gemini': '3'}
         model_number = model_map.get(model_name)
@@ -120,6 +120,8 @@ class AscleInterface:
             return self.api_manager.call_claude_api(prompt)
         elif selected_model == 'Gemini':
             return self.api_manager.call_gemini_api(prompt)
+        elif selected_model == 'LLaMA':
+            return self.api_manager.call_llama_api(prompt)
         else:
             return "No valid open model selected."
 

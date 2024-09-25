@@ -1,13 +1,25 @@
 import requests
 import google.generativeai as genai
 from anthropic import Anthropic
+from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+
 
 class APIManager:
     def __init__(self, model_manager):
         self.model_manager = model_manager
+        self.llama_pipeline = None  # Pipeline for LLaMA
+        self.tokenizer = None  # Tokenizer for LLaMA
 
     def configure_gemini(self):
         genai.configure(api_key=self.model_manager.get_api_key('Gemini'))
+        
+    def configure_llama(self):
+        """Configure LLaMA model from HuggingFace."""
+        if self.llama_pipeline is None:
+            self.tokenizer = AutoTokenizer.from_pretrained("huggingface/llama-model")
+            model = AutoModelForCausalLM.from_pretrained("huggingface/llama-model")
+            self.llama_pipeline = pipeline("text-generation", model=model, tokenizer=self.tokenizer)
+
 
     def call_chatgpt_api(self, text):
         headers = {
@@ -58,5 +70,15 @@ class APIManager:
             return generated_text
         except Exception as e:
             return f"Gemini API error: {str(e)}"
+        
+        
+    def call_llama_api(self, prompt):
+        """Process the prompt using the LLaMA model."""
+        try:
+            self.configure_llama()
+            response = self.llama_pipeline(prompt)[0]['generated_text']
+            return response
+        except Exception as e:
+            return f"LLaMA API error: {str(e)}"
 
 

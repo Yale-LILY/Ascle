@@ -44,3 +44,10 @@ med.choose_model('Ascle')
 # Procesar un prompt con un modelo local (analiza el tipo de acción)
 output = med.process_prompt(prompt)
 print("Ascle:\n", output)
+
+print("**********")
+# Cambiar a modelo local
+med.choose_model('LLaMA')
+# Procesar un prompt con un modelo local (analiza el tipo de acción)
+output = med.process_prompt(prompt)
+print("LLaMa:\n", output)

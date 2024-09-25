@@ -20,7 +20,9 @@ class ModelManager:
         elif model_number == '2':
             self.selected_model = 'Claude'
         elif model_number == '3':
-            self.selected_model = 'Gemini'
+            self.selected_model = 'Gemini'            
+        elif model_number == '4':  # Assuming '4' is for LLaMA
+            self.selected_model = 'LLaMA'
         else:
             return False
         return True
