@@ -2,6 +2,7 @@ import re
 from transformers import pipeline
 from api_manager import APIManager
 from Ascle import Ascle  # Importar la clase Ascle para usar sus métodos directamente
+import transformers
 import torch
 
 class CommandProcessor:
@@ -9,6 +10,7 @@ class CommandProcessor:
         """
         Initializes the CommandProcessor with a ModelManager instance and sets up zero-shot classification.
         """
+        transformers.logging.set_verbosity_error()
         self.device = 0 if torch.cuda.is_available() else -1
         self.model_manager = model_manager
         self.classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli", device=self.device, clean_up_tokenization_spaces=True)
