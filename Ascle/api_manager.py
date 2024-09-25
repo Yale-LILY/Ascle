@@ -46,9 +46,15 @@ class APIManager:
 
     def call_gemini_api(self, text):
         try:
+            # Configura tu clave de API
             self.configure_gemini()
-            model = genai.GenerativeModel(model_name="gemini-1.5-pro")
-            response = model.generate_text(text)
-            return response
+
+            # Llamada a la API usando el modelo 'gemini-1.5-flash'
+            model = genai.GenerativeModel("gemini-1.5-pro")
+            response = model.generate_content(text)
+
+            # Acceder al texto generado en la respuesta
+            generated_text = response.candidates[0].content.parts[0].text
+            return generated_text
         except Exception as e:
             return f"Gemini API error: {str(e)}"
