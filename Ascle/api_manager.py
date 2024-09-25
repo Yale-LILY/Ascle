@@ -58,3 +58,5 @@ class APIManager:
             return generated_text
         except Exception as e:
             return f"Gemini API error: {str(e)}"
+
+
