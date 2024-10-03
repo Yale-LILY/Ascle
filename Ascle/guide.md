@@ -1,5 +1,5 @@
 
-# **User Guide for Model Integration and Command Processing**
+# **Use of Ascle Interface and Model Integration**
 
 This guide provides a detailed description of how to use the available classes and methods to manage and process requests through various language models. The structure is organized around the main classes and functions, allowing users to select models, configure corresponding APIs, and process prompts efficiently.
 
@@ -119,7 +119,33 @@ The `CommandProcessor` class is responsible for identifying and processing comma
 
 ---
 
-## **5. Example Usage: `AscleInterface`**
+## **5. Example Usage: `AscleInterface` with ChatGPT**
+
+### **Overview**
+The following is an example of how to use the `AscleInterface` class to select the `chatgpt` model and process an input text to generate a response.
+
+### **Example Code**
+
+```python
+from Ascle_interface import AscleInterface
+
+# Create an instance of AscleInterface
+med = AscleInterface()
+
+# Define the input text (prompt)
+prompt = "Explain quantum computing in simple terms."
+
+# Select the ChatGPT model
+med.choose_model("chatgpt")
+
+# Process the prompt and get the output
+output = med.process_prompt(prompt)
+print("Output:", output)
+```
+
+---
+
+## **6. Example Usage: `AscleInterface` with Ascle Model**
 
 ### **Overview**
 The following is an example of how to use the `AscleInterface` class to select the `Ascle` model and process an input text to generate a summary.
