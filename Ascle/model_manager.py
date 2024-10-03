@@ -9,17 +9,17 @@ class ModelManager:
         load_dotenv(config_file)
         self.selected_model = None
         self.api_keys = {
-            'ChatGPT': os.getenv("CHATGPT_API_KEY"),
-            'Claude': os.getenv("CLAUDE_API_KEY"),
-            'Gemini': os.getenv("GEMINI_API_KEY"),
-            'LLaMA': os.getenv("HF_TOKEN")
+            'chatgpt': os.getenv("CHATGPT_API_KEY"),
+            'claude': os.getenv("CLAUDE_API_KEY"),
+            'gemini': os.getenv("GEMINI_API_KEY"),
+            'llama': os.getenv("HF_TOKEN")
         }
     
     def choose_model(self, model, model_version=None):
         """
         Select a model and its version based on user input or default version.
         """
-        valid_models = ['gpt', 'claude', 'gemini', 'llama', 'ascle']
+        valid_models = ['chatgpt', 'claude', 'gemini', 'llama', 'ascle']
         if model in valid_models:
             self.selected_model = model_version or self.get_default_version(model)
             return True
@@ -35,7 +35,7 @@ class ModelManager:
         Define default versions for models if no specific version is provided.
         """
         default_versions = {
-            'gpt': 'gpt-4',
+            'chatgpt': 'gpt-4',
             'claude': 'claude-1.3',
             'gemini': 'gemini-1.5-flash',
             'llama': 'meta-llama/Llama-2-7b-chat-hf',
