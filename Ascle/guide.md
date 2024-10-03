@@ -133,10 +133,14 @@ from Ascle_interface import AscleInterface
 med = AscleInterface()
 
 # Define the input text (prompt)
-prompt = "Explain quantum computing in simple terms."
+prompt = ("summarize this text: The patient presents with symptoms of acute bronchitis, "
+          "including cough, chest congestion, and mild fever. Auscultation reveals coarse breath sounds "
+          "and occasional wheezing...")
 
 # Select the ChatGPT model
-med.choose_model("chatgpt")
+
+model = "gpt-3.5-turbo"
+med.choose_model("chatgpt", model_versions={"model_gpt": model})
 
 # Process the prompt and get the output
 output = med.process_prompt(prompt)
