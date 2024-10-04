@@ -1,6 +1,5 @@
-# Import necessary modules from LangChain
 from langchain.prompts import PromptTemplate
-from langchain.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI  # Adjusted based on the new OpenAI package
 from langchain.memory import ConversationBufferWindowMemory
 from langchain.chains import ConversationChain
 from typing import List, Dict, Any
@@ -9,16 +8,20 @@ from model_manager import ModelManager  # Import ModelManager to manage API keys
 
 # Define the MedicalAssistantInterface class to interact with a medical assistant model
 class MedicalAssistantInterface:
-    def __init__(self, model_manager: ModelManager, model_name: str = "gpt-4-0125-preview"):
+    def __init__(self, model_manager: ModelManager, model_name: str = None):
         """
         Initializes the medical assistant interface with necessary configurations.
         
         Parameters:
         model_manager (ModelManager): An instance of ModelManager to handle API keys.
-        model_name (str): The name of the language model to be used.
+        model_name (str, optional): The name of the language model to be used. If not specified, the default version from ModelManager will be used.
         """
-        # Retrieve the ChatGPT API key using the ModelManager
-        api_key = model_manager.get_api_key("ChatGPT")
+        # Retrieve the API key for ChatGPT using the ModelManager
+        api_key = model_manager.get_api_key("chatgpt")
+        
+        # If no model name is provided, use the default from ModelManager
+        if not model_name:
+            model_name = model_manager.get_default_version("chatgpt")
         
         # Initialize the ChatOpenAI model with the retrieved API key
         self.llm = ChatOpenAI(model_name=model_name, temperature=0, openai_api_key=api_key)
@@ -86,6 +89,7 @@ class MedicalAssistantInterface:
         # Use the conversation chain to predict the answer based on the context and question
         answer = self.conversation.predict(context=context, input=question)
         return answer
+
 
 # Extend the ConversationBufferWindowMemory class to add extra variables to the memory
 class ExtendedConversationBufferWindowMemory(ConversationBufferWindowMemory):

@@ -177,4 +177,3 @@ print("Output:", output)
 
 ---
 
-This guide provides a clear structure for users to understand how to use the classes, select models, and process commands using the available tools.
