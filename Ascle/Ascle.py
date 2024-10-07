@@ -3,6 +3,14 @@ from transformer_functions import get_translation, get_supported_translation_lan
 from utils import get_sents_stanza, get_multiple_sents_stanza, get_sents_pyrush, get_sents_scispacy
 from multi_doc_functions import get_clusters, get_similar_documents
 from transformers_translationMT5 import get_mT5_translation
+from anthropic import Anthropic
+import google.generativeai as genai
+from huggingface_hub import login
+from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+import json
+import requests
+import torch
+
 import numpy as np
 from stanza_functions import (
     get_named_entities_stanza_biomed,
@@ -194,5 +202,48 @@ class Ascle:
     
     def get_pos_tagging_hf(self,model_name="flair/pos-english"):
         return get_pos_tagging_hf(self.main_record,model_name)
-
-                        
+    
+    def call_Claude(self, model_name="claude-1.3", api_key=""): 
+        claude = Anthropic(api_key=api_key)
+        prompt = f"\n\nHuman: {self.main_record}\n\nAssistant:"
+        response = claude.completions.create(model=model_name, max_tokens_to_sample=1024, prompt=prompt, stop_sequences=["\n\nHuman:"])
+        return response.completion.strip() if response and response.completion else "Error: No content found"
+        
+    def call_GPT(self, model_name="gpt-4", api_key=""):        
+        headers = {
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json"
+        }
+        payload = {"model": model_name, "messages": [{"role": "user", "content": self.main_record}]}
+        response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
+        if response.status_code == 200:
+            return response.json()['choices'][0]['message']['content']
+        return f"Error: {response.status_code} - {response.text}"
+    
+    def call_Gemini(self, model_name="gemini-1.5-flash", api_key=""):
+        genai.configure(api_key=api_key)
+        model = genai.GenerativeModel(model_name)
+        response = model.generate_content(self.main_record)
+        return response.candidates[0].content.parts[0].text
+    
+    def call_LlaMa(self, model_name="meta-llama/Llama-2-7b-chat-hf", api_key=""):
+        login(token=api_key, add_to_git_credential=True)
+        tokenizer = AutoTokenizer.from_pretrained(model_name)
+        device = 0 if torch.cuda.is_available() else -1
+        llama_model = AutoModelForCausalLM.from_pretrained(model_name)
+        
+        model_pipeline = pipeline(
+            "text-generation", 
+            model=llama_model,
+            device=device,  # 0 for first GPU
+            do_sample=True,  # Enable sampling for more varied output
+            temperature=0.7,  # Adjust temperature for sampling
+            top_p=0.9,  # Enable nucleus sampling (top-p sampling)
+            tokenizer=tokenizer,
+            pad_token_id=50256
+        )
+        
+        #llama_pipeline = pipeline("text-generation", model=llama_model, tokenizer=tokenizer, device=device, num_beams=3, do_sample=True, temperature=0.7, top_p=0.9)
+        generated_text = model_pipeline(self.main_record, max_new_tokens=100)
+        return generated_text[0]["generated_text"]
+    
