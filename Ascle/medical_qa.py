@@ -4,25 +4,17 @@ from langchain.memory import ConversationBufferWindowMemory
 from langchain.chains import ConversationChain
 from typing import List, Dict, Any
 from umls_rerank import get_umls_keys  # Import function to extract UMLS keys
-from model_manager import ModelManager  # Import ModelManager to manage API keys
 
-# Define the MedicalAssistantInterface class to interact with a medical assistant model
-class MedicalAssistantInterface:
-    def __init__(self, model_manager: ModelManager, model_name: str = None):
+# Define the UmlsQA class to interact with a medical assistant model
+class UmlsQA:
+    def __init__(self,  model_name="gpt-4", api_key=""):
         """
         Initializes the medical assistant interface with necessary configurations.
         
-        Parameters:
-        model_manager (ModelManager): An instance of ModelManager to handle API keys.
-        model_name (str, optional): The name of the language model to be used. If not specified, the default version from ModelManager will be used.
+        Parameters:       
+        model_name (str, optional): The name of the language model to be used. If not specified, the default version will be used.
         """
-        # Retrieve the API key for ChatGPT using the ModelManager
-        api_key = model_manager.get_api_key("chatgpt")
-        
-        # If no model name is provided, use the default from ModelManager
-        if not model_name:
-            model_name = model_manager.get_default_version("chatgpt")
-        
+                
         # Initialize the ChatOpenAI model with the retrieved API key
         self.llm = ChatOpenAI(model_name=model_name, temperature=0, openai_api_key=api_key)
         
