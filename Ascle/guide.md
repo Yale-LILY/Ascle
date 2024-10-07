@@ -21,7 +21,7 @@ prompt = ("summarize this text: The patient presents with symptoms of acute bron
           "including cough, chest congestion, and mild fever. Auscultation reveals coarse breath sounds "
           "and occasional wheezing. Based on the clinical examination, a diagnosis of acute bronchitis is made, "
           "and the patient is prescribed a short course of bronchodilators and advised to rest and stay hydrated.")
-          
+
 med.update_and_delete_main_record(prompt)
 
 # Using the default model
@@ -45,6 +45,20 @@ This method sends the user's input to OpenAI's GPT-4 model using the provided AP
 **Returns**:
 - `str`: The generated response from GPT-4, or an error message with the HTTP status code and response if the call fails.
 
+**Example**:
+```python
+from Ascle import Ascle
+
+med = Ascle()
+prompt = "Summarize the following text: ..."
+med.update_and_delete_main_record(prompt)
+
+# Using the default model
+response_default = med.call_GPT(api_key="xxxx")
+
+# Using a specific GPT model
+response_specific = med.call_GPT(model_name="gpt-3.5-turbo",api_key="xxxx")
+```
 ---
 
 ## `call_Gemini`
@@ -60,6 +74,21 @@ This method interacts with the Gemini model, using the provided API key to gener
 - `str`: The generated response from Gemini based on the user's input.
 
 
+**Example**:
+```python
+from Ascle import Ascle
+
+med = Ascle()
+prompt = "Summarize the following text: ..."
+med.update_and_delete_main_record(prompt)
+
+# Using the default model
+response_default = med.call_Gemini(api_key="xxxx")
+
+# Using a specific Gemini model
+response_specific = med.call_Gemini(model_name="gemini-2.0", api_key="xxxx")
+```
+
 ---
 
 ## `call_LlaMa`
@@ -73,5 +102,20 @@ This method utilizes the Meta LLaMA model to generate text responses based on us
 
 **Returns**:
 - `str`: The generated response from the LLaMA model based on the input provided.
+
+**Example**:
+```python
+from Ascle import Ascle
+
+med = Ascle()
+prompt = "Summarize the following text: ..."
+med.update_and_delete_main_record(prompt)
+
+# Using the default model
+response_default = med.call_LlaMa(api_key="xxxx")
+
+# Using a specific LLaMa model
+response_specific = med.call_LlaMa(model_name="meta-llama/Llama-2-13b-chat-hf", api_key="xxxx")
+```
 
 ```
