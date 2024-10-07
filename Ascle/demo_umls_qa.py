@@ -1,14 +1,12 @@
 # Import the necessary classes
-from model_manager import ModelManager  # Import ModelManager to manage API keys
-from medical_assistant import MedicalAssistantInterface  # Import MedicalAssistantInterface class
+from medical_qa import UmlsQA  # Import MedicalAssistantInterface class
 
 # Code that will be called from the main
 if __name__ == "__main__":
     # Initialize the ModelManager, which loads the API keys from the .env file
-    model_manager = ModelManager(config_file=".env")  
     
     # Initialize the UmlsQA using the model manager to handle API keys
-    assistant = UmlsQA(model_manager=model_manager)  
+    assistant = UmlsQA(model_name="gpt-3.5-turbo", api_key="xxxx")  
     
     # Define the medical question in a variable
     question = "How does smoking affect lung function?"
