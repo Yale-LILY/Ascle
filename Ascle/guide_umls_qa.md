@@ -1,5 +1,5 @@
 
-# 📔 Medical Assistant Model with UMLS Integration
+# 📔 UMLS Interface
 
 <p align="center">
    <img src="Ascle_logo.png">
