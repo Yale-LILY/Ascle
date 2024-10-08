@@ -232,7 +232,6 @@ question = "How does smoking affect lung function?"
 # Print the response
 print(assistant.ask_medical_question(question))
 ```
----
 
 The `ExtendedConversationBufferWindowMemory` class extends the memory handling of conversations by adding support for extra variables.
 
