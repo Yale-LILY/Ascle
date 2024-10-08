@@ -209,7 +209,6 @@ The `UmlsQA` class allows interaction with a medical assistant model to process 
 * `model_name`: The name of the language model to be used. Defaults to `"gpt-4"`.
 * `api_key`: The API key for accessing the language model's API.
 
----
 
 `ask_medical_question(self, question: str) -> str`: Ask a medical question and return the response from the medical assistant.
 
@@ -243,5 +242,36 @@ The `ExtendedConversationBufferWindowMemory` class extends the memory handling o
 **Returns**: 
 * A `Dict[str, Any]` containing the loaded memory variables.
 
+### ✨ Ascle.py
+
+
+`call_Claude(model_name="claude-1.3", api_key="")`: Interacts with the Anthropic Claude model to generate a completion response.
+
+**Parameters**:
+* `model_name`: The name of the Claude model to be used. Defaults to `"claude-1.3"`.
+* `api_key`: The API key for accessing Claude's API.
+* returns: A string with the generated response from Claude.
+
+
+`call_GPT(model_name="gpt-4", api_key="")`: Sends a query to OpenAI's GPT-4 model and retrieves a generated response.
+
+**Parameters**:
+* `model_name`: The name of the GPT model to be used. Defaults to `"gpt-4"`.
+* `api_key`: The API key for accessing OpenAI's GPT API.
+* returns: A string with the generated response from GPT.
+
+`call_Gemini(model_name="gemini-1.5-flash", api_key="")`: Interacts with the Gemini model, using the provided API key to generate content.
+
+**Parameters**:
+* `model_name`: The name of the Gemini model to be used. Defaults to `"gemini-1.5-flash"`.
+* `api_key`: The API key for accessing Gemini's API.
+* returns: A string with the generated response from Gemini.
+
+`call_LlaMa(model_name="meta-llama/Llama-2-7b-chat-hf", api_key="")`: Utilizes the Meta LLaMA model to generate text responses based on user input.
+
+**Parameters**:
+* `model_name`: The name of the LLaMA model to be used. Defaults to `"meta-llama/Llama-2-7b-chat-hf"`.
+* `api_key`: The API key for accessing Meta's LLaMA model.
+* returns: A string with the generated response from LLaMA.
 ---
 
