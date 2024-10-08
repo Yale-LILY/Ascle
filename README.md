@@ -183,8 +183,7 @@ print(med.call_GPT(api_key="xxxx"))
 from umls_qa import UmlsQA
 
 # Initialize the UmlsQA 
-med = UmlsQA(model_name="gpt-3.5-turbo", api_key="xxxx")ç
-
+med = UmlsQA(model_name="gpt-3.5-turbo", api_key="xxxx")
 # Define the medical question in a variable
 question = "How does smoking affect lung function?"
 
