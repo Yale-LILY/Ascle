@@ -148,7 +148,6 @@ print(med.get_translation_mt5("French"))
    """
 ```
 #### Models integration
-
 ```python
 main_record =  """    
                summarize this text: 
@@ -175,8 +174,54 @@ print(med.call_GPT(api_key="xxxx"))
    """
 
 ```
-### Umls QA
 
+```python
+              
+med.update_and_delete_main_record(main_record)
+
+# call the GPT function and print the output
+print(med.call_Claude(api_key="xxxx"))
+
+>> """
+   Here is a summary of the text:
+
+   - Neurons are the basic cells of the brain and nervous system.
+   - They receive sensory input, send motor signals to muscles, and relay electrical signals in between.
+   - Neuron interactions shape our identity and personality.
+   - There are about 100 billion neurons in the human brain.
+   - Neurons interact with glial cells, which may outnumber neurons.
+   """
+```
+
+```python
+              
+med.update_and_delete_main_record(main_record)
+
+# call the GPT function and print the output
+print(med.call_Gemini(api_key="xxxx"))
+
+>> """   
+   Neurons, the building blocks of the brain and nervous system, are responsible for receiving sensory information, sending motor signals, and transmitting electrical signals throughout the body. Their intricate interactions shape our identities. While there are approximately 100 billion neurons, they work closely with glial cells, which may even outnumber neurons but whose exact quantity is unknown.
+   """
+```
+
+```python
+              
+med.update_and_delete_main_record(main_record)
+
+# call the GPT function and print the output
+print(med.call_LlaMa(api_key="xxxx"))
+
+>> """   
+   Neurons are specialized cells that have evolved to process information and transmit it to other cells or
+   parts of the body. They have three main parts: the dendrites, the cell body, and the axon. Dendrites are
+   branched, tree-like structures that receive signals from other neurons. The cell body, also called the
+   soma, contains the nucleus and the rest of the cell's organelles. The axon is a long, thin structure that
+   carries signals away from the cell body and to other neurons or to muscles or glands. Neurons are capable of transmitting signals electrically, chemically, or both. They can also store
+   information in the form of electrical or chemical changes in their membranes. This information can be retrieved and used later to influence the neuron'
+   """
+```
+### Umls QA
 ```python
 
 # Load UmlsQA

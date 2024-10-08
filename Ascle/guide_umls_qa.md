@@ -29,7 +29,7 @@ The `UmlsQA` class allows interaction with a medical assistant model to process 
 
 **Example**:
 ```python
-from medical_qa import UmlsQA
+from umls_qa import UmlsQA
 
 # Initialize the UmlsQA model
 assistant = UmlsQA(model_name="gpt-3.5-turbo", api_key="xxxx")
@@ -37,11 +37,8 @@ assistant = UmlsQA(model_name="gpt-3.5-turbo", api_key="xxxx")
 # Define the medical question
 question = "How does smoking affect lung function?"
 
-# Ask the medical question
-response = assistant.ask_medical_question(question)
-
 # Print the response
-print(f"Response: {response}")
+print(assistant.ask_medical_question(question))
 ```
 ---
 
@@ -58,25 +55,3 @@ The `ExtendedConversationBufferWindowMemory` class extends the memory handling o
 * A `Dict[str, Any]` containing the loaded memory variables.
 
 ---
-
-## Demo
-
-Below is a demo to initialize the `UmlsQA` class and ask a medical question:
-
-```python
-from medical_qa import UmlsQA
-
-# Initialize the UmlsQA using the GPT model
-assistant = UmlsQA(model_name="gpt-3.5-turbo", api_key="xxxx")
-
-# Define the medical question
-question = "How does smoking affect lung function?"
-
-# Ask the medical question and get the response
-response = assistant.ask_medical_question(question)
-
-# Print the response
-print(f"Response: {response}")
-```
-
-This code initializes the `UmlsQA` class with the chosen GPT model and asks a medical question about smoking's effects on lung function.

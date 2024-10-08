@@ -7,7 +7,6 @@ from anthropic import Anthropic
 import google.generativeai as genai
 from huggingface_hub import login
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
-import json
 import requests
 import torch
 
@@ -244,6 +243,6 @@ class Ascle:
         )
         
         #llama_pipeline = pipeline("text-generation", model=llama_model, tokenizer=tokenizer, device=device, num_beams=3, do_sample=True, temperature=0.7, top_p=0.9)
-        generated_text = model_pipeline(self.main_record, max_new_tokens=100)
+        generated_text = model_pipeline(self.main_record, max_new_tokens=200)
         return generated_text[0]["generated_text"]
     
