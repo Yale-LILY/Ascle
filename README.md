@@ -167,7 +167,12 @@ print(med.call_GPT(api_key="xxxx"))
 
 
 >> """
-   Neurons, or nerve cells, are essential units of the brain and nervous system responsible for receiving sensory input, sending motor commands to muscles and processing electrical signals. They also play a significant role in defining human personality. Despite being approximately 100 billion in number, neurons often interact with other cell types known as glia, which may outnumber neurons.
+   Neurons, or nerve cells, are essential units of the brain and nervous 
+   system responsible for receiving sensory input, sending motor commands 
+   to muscles and processing electrical signals. They also play a significant 
+   role in defining human personality. Despite being approximately 100 billion
+   in number, neurons often interact with other cell types known as glia, which
+   may outnumber neurons.
    """
 
 ```
