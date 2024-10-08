@@ -147,7 +147,7 @@ print(med.get_translation_mt5("French"))
    cancer, y compris le carcinome hépatocellulaire (HCC).
    """
 ```
-#### ChatGPT integration
+#### Models integration
 
 ```python
 main_record =  """    
@@ -165,7 +165,6 @@ med.update_and_delete_main_record(main_record)
 # call the GPT function and print the output
 print(med.call_GPT(api_key="xxxx"))
 
-
 >> """
    Neurons, or nerve cells, are essential units of the brain and nervous 
    system responsible for receiving sensory input, sending motor commands 
@@ -176,7 +175,31 @@ print(med.call_GPT(api_key="xxxx"))
    """
 
 ```
+### Umls QA
 
+```python
+
+# Load UmlsQA
+from umls_qa import UmlsQA
+
+# Initialize the UmlsQA 
+med = UmlsQA(model_name="gpt-3.5-turbo", api_key="xxxx")ç
+
+# Define the medical question in a variable
+question = "How does smoking affect lung function?"
+
+# Print the response in English
+print(med.ask_medical_question(question))
+
+>> """
+   Smoking can significantly impact lung function by causing inflammation 
+   and damage to the airways and alveoli. This can lead to conditions such 
+   as chronic obstructive pulmonary disease (COPD) and emphysema, which can
+   result in difficulty breathing and reduced lung capacity. Smoking also
+   increases the risk of developing lung cancer. It is important to quit smoking 
+   to protect your lung health and overall well-being.
+   """
+```
 ## Fine-tuned Models
 In Ascle, users can access any publicly available language model. Additionally, we provide users with 32 of our fine-tuned models which are suitable for multiple-choice QA, text simplification, and machine translation tasks.
 

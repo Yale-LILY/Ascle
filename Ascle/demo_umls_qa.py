@@ -1,5 +1,5 @@
 # Import the necessary classes
-from medical_qa import UmlsQA
+from umls_qa import UmlsQA
 
 # Code that will be called from the main
 if __name__ == "__main__":
