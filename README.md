@@ -179,7 +179,7 @@ print(med.call_GPT(api_key="xxxx"))
               
 med.update_and_delete_main_record(main_record)
 
-# call the GPT function and print the output
+# call the Claude function and print the output
 print(med.call_Claude(api_key="xxxx"))
 
 >> """
@@ -197,11 +197,17 @@ print(med.call_Claude(api_key="xxxx"))
               
 med.update_and_delete_main_record(main_record)
 
-# call the GPT function and print the output
+# call the Gemini function and print the output
 print(med.call_Gemini(api_key="xxxx"))
 
 >> """   
-   Neurons, the building blocks of the brain and nervous system, are responsible for receiving sensory information, sending motor signals, and transmitting electrical signals throughout the body. Their intricate interactions shape our identities. While there are approximately 100 billion neurons, they work closely with glial cells, which may even outnumber neurons but whose exact quantity is unknown.
+   Neurons, the building blocks of the brain and nervous system,
+   are responsible for receiving sensory information, sending motor 
+   signals, and transmitting electrical signals throughout the 
+   body. Their intricate interactions shape our identities. While 
+   there are approximately 100 billion neurons, they work closely 
+   with glial cells, which may even outnumber neurons but whose 
+   exact quantity is unknown.
    """
 ```
 
@@ -209,7 +215,7 @@ print(med.call_Gemini(api_key="xxxx"))
               
 med.update_and_delete_main_record(main_record)
 
-# call the GPT function and print the output
+# call the LlaMa function and print the output
 print(med.call_LlaMa(api_key="xxxx"))
 
 >> """   
