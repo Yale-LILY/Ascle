@@ -147,6 +147,30 @@ print(med.get_translation_mt5("French"))
    cancer, y compris le carcinome hépatocellulaire (HCC).
    """
 ```
+#### ChatGPT integration
+
+```python
+main_record =  """    
+               summarize this text: 
+               Neurons (also called neurones or nerve cells) are the fundamental units of the brain and nervous system,  
+               the cells responsible for receiving sensory input from the external world, for sending motor commands to  
+               our muscles, and for transforming and relaying the electrical signals at every step in between. More than  
+               that, their interactions define who we are as people. Having said that, our roughly 100 billion neurons do 
+               interact closely with other cell types, broadly classified as glia (these may actually outnumber neurons,  
+               although it’s not really known)
+               """
+              
+med.update_and_delete_main_record(main_record)
+
+# call the GPT function and print the output
+print(med.call_GPT(api_key="xxxx"))
+
+
+>> """
+   Neurons, or nerve cells, are essential units of the brain and nervous system responsible for receiving sensory input, sending motor commands to muscles and processing electrical signals. They also play a significant role in defining human personality. Despite being approximately 100 billion in number, neurons often interact with other cell types known as glia, which may outnumber neurons.
+   """
+
+```
 
 ## Fine-tuned Models
 In Ascle, users can access any publicly available language model. Additionally, we provide users with 32 of our fine-tuned models which are suitable for multiple-choice QA, text simplification, and machine translation tasks.
