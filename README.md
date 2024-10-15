@@ -1,4 +1,4 @@
-![image](https://github.com/Yale-LILY/Ascle/assets/11585259/b3d31e0c-81b6-4187-aa9c-44054994e00e)<p align="center">
+<p align="center">
    <img src="Ascle_logo.png">
 </p>
 
