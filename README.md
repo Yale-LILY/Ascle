@@ -39,6 +39,7 @@ Ascle consists of three modules:
 * [Contact](#contact)
 
 ## Updates
+_15_10_2024_ - Added new codes integrating LLMs such as ChatGPT, Gemini, Claude, and LLaMA into Ascle. <br/>
 _29_07_2024_ - We uploaded a new folder, `Ascle-JPBench`, containing open-sourced EN-JP medical task data examples. Ascle-JPBench will support comprehensive tasks such as QA, NLI, and multiple choice. <br/>
 _17_05_2024_ - We are currently updating Ascle. In the next version, Ascle will include the question-answering task based on the RAG framework and will support multiple languages for all tasks. <br/>
 _07_11_2023_ - New Release v2.2: we changed the toolkit name to Ascle from EHRKit, easier to use! <br/>
@@ -147,7 +148,7 @@ print(med.get_translation_mt5("French"))
    cancer, y compris le carcinome hépatocellulaire (HCC).
    """
 ```
-#### Models integration
+#### LLM integration
 ```python
 main_record =  """    
                summarize this text: 
@@ -304,7 +305,10 @@ Rui Yang*, Qingcheng Zeng*, Keen You*, Yujie Qiao*, Lucas Huang, Chia-Chun Hsieh
 
 Our sincere gratitude also goes to Dr.Edison Marrese-Taylor and Prof. Yutaka Matsuo from the University of Tokyo, for their invaluable guidance and support throughout this project.
 
+We also acknowledge external collaborators, including Mónica Pina-Navarro (University of Alicante), who contributed during a research stay.
+
 🕯️ Especially in the memory of Prof. Dragomir Radev, who has dedicated so much to this project.
+
 
 ## Paper
 Please find our paper at https://arxiv.org/abs/2311.16588.
