@@ -54,3 +54,42 @@ class NLPProcessor(BaseProcessor):
             return [text[s.start:s.end] for s in sentences]
         else:
             raise ValueError(f"Unsupported tool: {self.tool}")
+
+    def get_tokens(self, text):
+        if self.tool == 'stanza':
+            doc = self.nlp(text)
+            return [[token.text for token in sentence.tokens] for sentence in doc.sentences]
+        elif self.tool == 'scispacy':
+            doc = self.nlp(text)
+            return [token.text for token in doc]
+        else:
+            raise ValueError(f"Unsupported tool: {self.tool}")
+
+    def get_part_of_speech_and_morphological_features(self, text):
+        if self.tool == 'stanza':
+            doc = self.nlp(text)
+            tags = [[(word.text, word.upos, word.xpos, word.feats if word.feats else '_')
+                     for word in sent.words] for sent in doc.sentences]
+            return tags
+        else:
+            raise ValueError(f"Unsupported tool for POS tagging: {self.tool}")
+
+    def get_lemmas(self, text):
+        if self.tool == 'stanza':
+            doc = self.nlp(text)
+            lemmas = [[(word.text, word.lemma) for word in sent.words] for sent in doc.sentences]
+            return lemmas
+        else:
+            raise ValueError(f"Unsupported tool for lemmatization: {self.tool}")
+
+    def get_dependencies(self, text):
+        if self.tool == 'stanza':
+            doc = self.nlp(text)
+            dependencies = [[(word.id, word.text, word.head, sent.words[word.head - 1].text if word.head > 0 else "root", word.deprel)
+                             for word in sent.words] for sent in doc.sentences]
+            return dependencies
+        elif self.tool == 'scispacy':
+            doc = self.nlp(text)
+            return [(token.text, token.dep_, token.head.text) for token in doc]
+        else:
+            raise ValueError(f"Unsupported tool for dependency parsing: {self.tool}")

@@ -11,14 +11,7 @@
 # ------------------------------------------------------------------------------
 from abc import ABC, abstractmethod
 from typing import List, Optional, Union
-from dataclasses import dataclass
 
-@dataclass
-class ModelConfig:
-    name: str
-    device: str = "cpu"
-    max_length: int = 512
-    batch_size: int = 32
 
 class BaseProcessor(ABC):
     def __init__(self, config: ModelConfig):
@@ -43,3 +36,4 @@ class BaseProcessor(ABC):
     def cleanup(self):
         if hasattr(self, '_model'):
             del self._model
+
