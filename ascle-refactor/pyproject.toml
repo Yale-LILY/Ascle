@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "ascle"
+version = "develop"
+description = "Medical text processing toolkit"
+authors = [li-lab]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+torch = "^2.0.0"
+transformers = "^4.30.0"
+scispacy = "^0.5.0"
+medspacy = "^0.2.0.0"
+stanza = "^1.4.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.0.0"
+black = "^22.3.0"
+isort = "^5.10.1"
+mypy = "^0.981"
