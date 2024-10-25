@@ -11,7 +11,7 @@
 # ------------------------------------------------------------------------------
 import pytest
 from ascle.core.ascle import Ascle
-from ascle.core.config import ModelConfig
+from ascle.utils.config import ModelConfig
 from ascle.processors.text.nlp_processor import NLPProcessor
 
 # Updating tests to cover all added functionalities
@@ -52,4 +52,11 @@ def test_translation_processor():
         result = ascle.process_text("The patient presents with acute respiratory symptoms.", processors=["translation"])
         assert "translation" in result
         assert isinstance(result["translation"], str)
+
+
+def test_medspacy_processor():
+    with Ascle() as ascle:
+        result = ascle.process_text("The patient presents with fever and cough. He has a history of diabetes.", processors=["medspacy"])
+        assert "medspacy" in result
+        assert "entities" in result["medspacy"]
 
